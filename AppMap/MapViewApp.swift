@@ -91,7 +91,7 @@ struct MapViewApp: View {
                 Text("1st")
               }
             NavigationView{
-                SecondView()
+                DeriveView()
                     .preferredColorScheme(.dark)
     
                     .navigationTitle("Ciao")
@@ -102,7 +102,7 @@ struct MapViewApp: View {
                     
                 }
             NavigationView{
-                ThirdView()
+                CollectionView()
                     .preferredColorScheme(.dark)
                     .navigationTitle("Boh")
             }

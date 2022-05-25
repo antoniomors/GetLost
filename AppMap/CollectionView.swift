@@ -1,5 +1,5 @@
 //
-//  ThirdView.swift
+//  CollectionView.swift
 //  AppMap
 //
 //  Created by Antonio Amoroso on 21/05/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ThirdView: View {
+struct CollectionView: View {
     
     var body: some View {
         List {
@@ -30,10 +30,9 @@ struct ThirdView: View {
     }
 }
 
-//struct ThirdView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ThirdView()
-//
-//    
-//    }
-//}
+struct CollectionView_Previews: PreviewProvider {
+    static var previews: some View {
+        CollectionView()
+
+    }
+}

@@ -1,5 +1,5 @@
 //
-//  SecondView.swift
+//  DeriveView.swift
 //  AppMap
 //
 //  Created by Antonio Amoroso on 20/05/22.
@@ -10,7 +10,7 @@
 import SwiftUI
 
 
-struct SecondView: View {
+struct DeriveView: View {
     // animation
     @State private var isRotated = false
     var animation: Animation {
@@ -119,10 +119,9 @@ struct SecondView: View {
 
 struct SecondView_Previews: PreviewProvider {
     static var previews: some View {
-        SecondView()
+        DeriveView()
     }
 }
-
 
 
 struct createNote: View {

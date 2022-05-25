@@ -11,9 +11,9 @@
 		A96BDEC2283B7D46000E7E34 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC1283B7D46000E7E34 /* OnboardingDataModel.swift */; };
 		A96BDEC4283B7D87000E7E34 /* OnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC3283B7D87000E7E34 /* OnboardingStepView.swift */; };
 		A96BDEC6283B7DF6000E7E34 /* OnboardingViewPure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC5283B7DF6000E7E34 /* OnboardingViewPure.swift */; };
-		A97AB5D32837F6370024C3A5 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D22837F6370024C3A5 /* SecondView.swift */; };
+		A97AB5D32837F6370024C3A5 /* DeriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D22837F6370024C3A5 /* DeriveView.swift */; };
 		A97AB5D628380C2D0024C3A5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D528380C2D0024C3A5 /* ImagePicker.swift */; };
-		A97AB5DA2838F0000024C3A5 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D92838F0000024C3A5 /* ThirdView.swift */; };
+		A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D92838F0000024C3A5 /* CollectionView.swift */; };
 		A9CD1814283CD827006F0F37 /* RecordingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1811283CD827006F0F37 /* RecordingList.swift */; };
 		A9CD1815283CD827006F0F37 /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1812283CD827006F0F37 /* RecordingDataModel.swift */; };
 		A9CD1816283CD827006F0F37 /* RecorderAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1813283CD827006F0F37 /* RecorderAudio.swift */; };
@@ -31,9 +31,9 @@
 		A96BDEC1283B7D46000E7E34 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
 		A96BDEC3283B7D87000E7E34 /* OnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepView.swift; sourceTree = "<group>"; };
 		A96BDEC5283B7DF6000E7E34 /* OnboardingViewPure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPure.swift; sourceTree = "<group>"; };
-		A97AB5D22837F6370024C3A5 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		A97AB5D22837F6370024C3A5 /* DeriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeriveView.swift; sourceTree = "<group>"; };
 		A97AB5D528380C2D0024C3A5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
-		A97AB5D92838F0000024C3A5 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
+		A97AB5D92838F0000024C3A5 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A9CD1811283CD827006F0F37 /* RecordingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingList.swift; sourceTree = "<group>"; };
 		A9CD1812283CD827006F0F37 /* RecordingDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
 		A9CD1813283CD827006F0F37 /* RecorderAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderAudio.swift; sourceTree = "<group>"; };
@@ -95,8 +95,8 @@
 			children = (
 				A9F2952E2836709200527328 /* AppMapApp.swift */,
 				A9024FBE2837963400830255 /* MapViewApp.swift */,
-				A97AB5D22837F6370024C3A5 /* SecondView.swift */,
-				A97AB5D92838F0000024C3A5 /* ThirdView.swift */,
+				A97AB5D22837F6370024C3A5 /* DeriveView.swift */,
+				A97AB5D92838F0000024C3A5 /* CollectionView.swift */,
 				A9CD1800283CD585006F0F37 /* AudioRecorder */,
 				A9997DC2283B7562001CF94A /* OnBoarding */,
 				A97AB5D428380C1E0024C3A5 /* ImagePicker */,
@@ -192,14 +192,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A97AB5D32837F6370024C3A5 /* SecondView.swift in Sources */,
+				A97AB5D32837F6370024C3A5 /* DeriveView.swift in Sources */,
 				A9CD1815283CD827006F0F37 /* RecordingDataModel.swift in Sources */,
 				A9CD181E283CD83C006F0F37 /* Helper.swift in Sources */,
 				A97AB5D628380C2D0024C3A5 /* ImagePicker.swift in Sources */,
 				A9CD1816283CD827006F0F37 /* RecorderAudio.swift in Sources */,
 				A9024FBF2837963400830255 /* MapViewApp.swift in Sources */,
 				A9CD181D283CD83C006F0F37 /* AudioRecorder .swift in Sources */,
-				A97AB5DA2838F0000024C3A5 /* ThirdView.swift in Sources */,
+				A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */,
 				A96BDEC4283B7D87000E7E34 /* OnboardingStepView.swift in Sources */,
 				A9CD181B283CD83C006F0F37 /* Extensions.swift in Sources */,
 				A9F2952F2836709200527328 /* AppMapApp.swift in Sources */,
@@ -333,7 +333,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AppMap/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GCU6VHU5S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -364,7 +365,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"AppMap/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = GCU6VHU5S6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
