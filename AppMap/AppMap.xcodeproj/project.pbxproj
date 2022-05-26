@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A85E6B79283E3F8200161AEC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85E6B78283E3F8200161AEC /* UserSettings.swift */; };
+		A88E28F5283F7223008E0F1C /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88E28F4283F7223008E0F1C /* OnboardingButton.swift */; };
+		A88E28F7283F723E008E0F1C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88E28F6283F723E008E0F1C /* OnboardingViewModel.swift */; };
+		A88E28F9283F7267008E0F1C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88E28F8283F7267008E0F1C /* OnboardingView.swift */; };
 		A9024FBF2837963400830255 /* MapViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9024FBE2837963400830255 /* MapViewApp.swift */; };
 		A96BDEC2283B7D46000E7E34 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC1283B7D46000E7E34 /* OnboardingDataModel.swift */; };
 		A96BDEC4283B7D87000E7E34 /* OnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC3283B7D87000E7E34 /* OnboardingStepView.swift */; };
@@ -27,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A85E6B78283E3F8200161AEC /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		A88E28F4283F7223008E0F1C /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		A88E28F6283F723E008E0F1C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		A88E28F8283F7267008E0F1C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A9024FBE2837963400830255 /* MapViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewApp.swift; sourceTree = "<group>"; };
 		A96BDEC1283B7D46000E7E34 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
 		A96BDEC3283B7D87000E7E34 /* OnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepView.swift; sourceTree = "<group>"; };
@@ -58,6 +66,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A88E28FA283F72EE008E0F1C /* OnboardingNew */ = {
+			isa = PBXGroup;
+			children = (
+				A88E28F4283F7223008E0F1C /* OnboardingButton.swift */,
+				A88E28F6283F723E008E0F1C /* OnboardingViewModel.swift */,
+				A88E28F8283F7267008E0F1C /* OnboardingView.swift */,
+			);
+			path = OnboardingNew;
+			sourceTree = "<group>";
+		};
 		A97AB5D428380C1E0024C3A5 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +115,9 @@
 				A9024FBE2837963400830255 /* MapViewApp.swift */,
 				A97AB5D22837F6370024C3A5 /* DeriveView.swift */,
 				A97AB5D92838F0000024C3A5 /* CollectionView.swift */,
+				A85E6B78283E3F8200161AEC /* UserSettings.swift */,
 				A9CD1800283CD585006F0F37 /* AudioRecorder */,
+				A88E28FA283F72EE008E0F1C /* OnboardingNew */,
 				A9997DC2283B7562001CF94A /* OnBoarding */,
 				A97AB5D428380C1E0024C3A5 /* ImagePicker */,
 				A9F295342836709200527328 /* Preview Content */,
@@ -192,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A88E28F5283F7223008E0F1C /* OnboardingButton.swift in Sources */,
 				A97AB5D32837F6370024C3A5 /* DeriveView.swift in Sources */,
 				A9CD1815283CD827006F0F37 /* RecordingDataModel.swift in Sources */,
 				A9CD181E283CD83C006F0F37 /* Helper.swift in Sources */,
@@ -200,13 +221,16 @@
 				A9024FBF2837963400830255 /* MapViewApp.swift in Sources */,
 				A9CD181D283CD83C006F0F37 /* AudioRecorder .swift in Sources */,
 				A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */,
+				A85E6B79283E3F8200161AEC /* UserSettings.swift in Sources */,
 				A96BDEC4283B7D87000E7E34 /* OnboardingStepView.swift in Sources */,
 				A9CD181B283CD83C006F0F37 /* Extensions.swift in Sources */,
 				A9F2952F2836709200527328 /* AppMapApp.swift in Sources */,
 				A96BDEC6283B7DF6000E7E34 /* OnboardingViewPure.swift in Sources */,
 				A9CD1814283CD827006F0F37 /* RecordingList.swift in Sources */,
 				A9CD181C283CD83C006F0F37 /* AudioPlayer.swift in Sources */,
+				A88E28F7283F723E008E0F1C /* OnboardingViewModel.swift in Sources */,
 				A96BDEC2283B7D46000E7E34 /* OnboardingDataModel.swift in Sources */,
+				A88E28F9283F7267008E0F1C /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

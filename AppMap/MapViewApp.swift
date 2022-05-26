@@ -20,17 +20,17 @@ struct MyAnnotationItem: Identifiable {
 struct MapViewApp: View {
     
     
-
+    
     
     //var ex
     var annotationItems: [MyAnnotationItem] = [
         MyAnnotationItem(latitude: 440.847923, longitude: 14.258164),
-    
-        ]
+        
+    ]
     
     // Var for Onboarding
-    @State private var onboardinDone = false
-       var data = OnboardingDataModel.data
+    //    @State private var onboardinDone = false
+    //       var data = OnboardingDataModel.data
     
     // Location manager vars
     @StateObject private var locationManager = ObservableLocationManager()
@@ -39,95 +39,95 @@ struct MapViewApp: View {
     
     var body: some View {
         
-        if !onboardinDone {
-            
-            OnboardingViewPure(data: data, doneFunction: {
-                              /// Update your state here
-                              self.onboardinDone = true
-                              print("done onboarding")
-                          })
-        } else {
+        //        if !onboardinDone {
+        //
+        //            OnboardingViewPure(data: data, doneFunction: {
+        //                              /// Update your state here
+        //                              self.onboardinDone = true
+        //                              print("done onboarding")
+        //                          })
+        //        } else {
         TabView {
             NavigationView {
-            ZStack {
-                
-                Map(coordinateRegion: $locationManager.region, showsUserLocation: true, annotationItems: annotationItems) { item in
-                   MapMarker(coordinate: CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude))
-            
+                ZStack {
+                    
+                    Map(coordinateRegion: $locationManager.region, showsUserLocation: true, annotationItems: annotationItems) { item in
+                        MapMarker(coordinate: CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude))
+                        
+                    }
+                    
+                    
+                    .navigationBarTitle("GetLost")
+                    
+                    .ignoresSafeArea()
+                    
+                    
+                    Button(action: {
+                        locationManager.updateLocation()
+                        print("button pressed")
+                    }, label: {
+                        Image(systemName: "location.fill")
+                            .font(.system(size: 30))
+                    }).foregroundColor(.white)
+                        .frame(width: 50, height: 50)
+                        .background(.gray)
+                        .cornerRadius(58)
+                        .offset(x: -160, y: 280)
+                    
+                    
+                    Rectangle()
+                        .fill(Color.clear)
+                        .frame(height: 10)
+                        .background(Color.black)
+                        .opacity(0.4)
+                        .offset(y: 330)
+                    
+                    
+                    
                 }
-
-                
-                 .navigationBarTitle("GetLost")
-        
-            .ignoresSafeArea()
-            
-            
-                Button(action: {
-                    locationManager.updateLocation()
-                    print("button pressed")
-                }, label: {
-                    Image(systemName: "location.fill")
-                        .font(.system(size: 30))
-                }).foregroundColor(.white)
-                    .frame(width: 50, height: 50)
-                    .background(.gray)
-                    .cornerRadius(58)
-                    .offset(x: -160, y: 280)
-                
-                
-                Rectangle()
-                                        .fill(Color.clear)
-                                        .frame(height: 10)
-                                        .background(Color.black)
-                                        .opacity(0.4)
-                                        .offset(y: 330)
-                
-                                       
-        
-            }
             }
             .tabItem {
                 Image(systemName: "tray")
                 Text("1st")
-              }
+            }
             NavigationView{
                 DeriveView()
                     .preferredColorScheme(.dark)
-    
+                
                     .navigationTitle("Ciao")
             }
-                .tabItem {
-                    Image(systemName: "house")
-                              Text("2nd")
-                    
-                }
+            .tabItem {
+                Image(systemName: "house")
+                Text("2nd")
+                
+            }
             NavigationView{
                 CollectionView()
                     .preferredColorScheme(.dark)
                     .navigationTitle("Boh")
             }
-                .tabItem{
-                    Image(systemName: "doc")
-                              Text("3rd")
-                }
+            .tabItem{
+                Image(systemName: "doc")
+                Text("3rd")
+            }
             
+            
+            
+            
+            
+        } .accentColor(Color.white)
+        //            .onAppear {
+        //
         
-
-                             
-                    
-                } .accentColor(Color.white)
-//            .onAppear {
-//
-
-//                UITabBar.appearance().backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
-//                UITabBar.appearance()
-//
-//              UITabBar.appearance().unselectedItemTintColor = UIColor.gray
-//            }
-        }
-        
+        //                UITabBar.appearance().backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        //                UITabBar.appearance()
+        //
+        //              UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+        //            }
     }
-    }
+    
+}
+
 
 
 struct MapViewApp_Previews: PreviewProvider {
@@ -228,19 +228,19 @@ final class ObservableLocationManager: NSObject, ObservableObject, CLLocationMan
     
     func updateLocation() {
         locationManager.requestLocation()
-
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
-//        DispatchQueue.main.async {
-            self.region = MKCoordinateRegion(
-                center: location.coordinate,
-                latitudinalMeters: 1000,
-                longitudinalMeters: 1000
-            )
-//        }
+        //        DispatchQueue.main.async {
+        self.region = MKCoordinateRegion(
+            center: location.coordinate,
+            latitudinalMeters: 1000,
+            longitudinalMeters: 1000
+        )
+        //        }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
