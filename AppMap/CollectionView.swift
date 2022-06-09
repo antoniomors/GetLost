@@ -8,31 +8,17 @@
 import SwiftUI
 
 struct CollectionView: View {
-    
     var body: some View {
         List {
             HStack {
-                
-        Text("Collection?")
-            
-            
-
-                    
-    
-
-        
-        
-        
-        
+                Text("Collection0")
             }
         }.listStyle(.insetGrouped)
-
     }
 }
 
 struct CollectionView_Previews: PreviewProvider {
     static var previews: some View {
         CollectionView()
-
     }
 }

@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A85E6B79283E3F8200161AEC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85E6B78283E3F8200161AEC /* UserSettings.swift */; };
-		A88E28F5283F7223008E0F1C /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88E28F4283F7223008E0F1C /* OnboardingButton.swift */; };
-		A88E28F7283F723E008E0F1C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88E28F6283F723E008E0F1C /* OnboardingViewModel.swift */; };
-		A88E28F9283F7267008E0F1C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88E28F8283F7267008E0F1C /* OnboardingView.swift */; };
-		A9024FBF2837963400830255 /* MapViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9024FBE2837963400830255 /* MapViewApp.swift */; };
-		A96BDEC2283B7D46000E7E34 /* OnboardingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC1283B7D46000E7E34 /* OnboardingDataModel.swift */; };
-		A96BDEC4283B7D87000E7E34 /* OnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC3283B7D87000E7E34 /* OnboardingStepView.swift */; };
-		A96BDEC6283B7DF6000E7E34 /* OnboardingViewPure.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96BDEC5283B7DF6000E7E34 /* OnboardingViewPure.swift */; };
+		A88E28F7283F723E008E0F1C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88E28F6283F723E008E0F1C /* OnboardingView.swift */; };
+		A89664C02851053500BE043A /* emptyDerive.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89664BF2851053500BE043A /* emptyDerive.swift */; };
+		A89664CA2851914300BE043A /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89664C92851914300BE043A /* Place.swift */; };
+		A89664CC2851915C00BE043A /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89664CB2851915C00BE043A /* MapViewModel.swift */; };
+		A89664CE2851917B00BE043A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89664CD2851917B00BE043A /* Home.swift */; };
+		A89664D02851919800BE043A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89664CF2851919800BE043A /* MapView.swift */; };
+		A9024FBF2837963400830255 /* MapViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9024FBE2837963400830255 /* MapViewOld.swift */; };
 		A97AB5D32837F6370024C3A5 /* DeriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D22837F6370024C3A5 /* DeriveView.swift */; };
 		A97AB5D628380C2D0024C3A5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D528380C2D0024C3A5 /* ImagePicker.swift */; };
 		A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D92838F0000024C3A5 /* CollectionView.swift */; };
@@ -25,20 +25,20 @@
 		A9CD181C283CD83C006F0F37 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1818283CD83C006F0F37 /* AudioPlayer.swift */; };
 		A9CD181D283CD83C006F0F37 /* AudioRecorder .swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1819283CD83C006F0F37 /* AudioRecorder .swift */; };
 		A9CD181E283CD83C006F0F37 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD181A283CD83C006F0F37 /* Helper.swift */; };
-		A9F2952F2836709200527328 /* AppMapApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2952E2836709200527328 /* AppMapApp.swift */; };
+		A9F2952F2836709200527328 /* GetLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2952E2836709200527328 /* GetLostApp.swift */; };
 		A9F295332836709200527328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F295322836709200527328 /* Assets.xcassets */; };
 		A9F295362836709200527328 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F295352836709200527328 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A85E6B78283E3F8200161AEC /* UserSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		A88E28F4283F7223008E0F1C /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
-		A88E28F6283F723E008E0F1C /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		A88E28F8283F7267008E0F1C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		A9024FBE2837963400830255 /* MapViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewApp.swift; sourceTree = "<group>"; };
-		A96BDEC1283B7D46000E7E34 /* OnboardingDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingDataModel.swift; sourceTree = "<group>"; };
-		A96BDEC3283B7D87000E7E34 /* OnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepView.swift; sourceTree = "<group>"; };
-		A96BDEC5283B7DF6000E7E34 /* OnboardingViewPure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPure.swift; sourceTree = "<group>"; };
+		A88E28F6283F723E008E0F1C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A89664BF2851053500BE043A /* emptyDerive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emptyDerive.swift; sourceTree = "<group>"; };
+		A89664C92851914300BE043A /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		A89664CB2851915C00BE043A /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		A89664CD2851917B00BE043A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		A89664CF2851919800BE043A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		A9024FBE2837963400830255 /* MapViewOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewOld.swift; sourceTree = "<group>"; };
 		A97AB5D22837F6370024C3A5 /* DeriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeriveView.swift; sourceTree = "<group>"; };
 		A97AB5D528380C2D0024C3A5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A97AB5D92838F0000024C3A5 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
@@ -49,8 +49,8 @@
 		A9CD1818283CD83C006F0F37 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		A9CD1819283CD83C006F0F37 /* AudioRecorder .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AudioRecorder .swift"; sourceTree = "<group>"; };
 		A9CD181A283CD83C006F0F37 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
-		A9F2952B2836709200527328 /* AppMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9F2952E2836709200527328 /* AppMapApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMapApp.swift; sourceTree = "<group>"; };
+		A9F2952B2836709200527328 /* GetLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9F2952E2836709200527328 /* GetLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLostApp.swift; sourceTree = "<group>"; };
 		A9F295322836709200527328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A9F295352836709200527328 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,14 +66,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A88E28FA283F72EE008E0F1C /* OnboardingNew */ = {
+		A89664C82851912A00BE043A /* MapView */ = {
 			isa = PBXGroup;
 			children = (
-				A88E28F4283F7223008E0F1C /* OnboardingButton.swift */,
-				A88E28F6283F723E008E0F1C /* OnboardingViewModel.swift */,
-				A88E28F8283F7267008E0F1C /* OnboardingView.swift */,
+				A89664CD2851917B00BE043A /* Home.swift */,
+				A89664C92851914300BE043A /* Place.swift */,
+				A89664CF2851919800BE043A /* MapView.swift */,
+				A89664CB2851915C00BE043A /* MapViewModel.swift */,
+				A9024FBE2837963400830255 /* MapViewOld.swift */,
 			);
-			path = OnboardingNew;
+			path = MapView;
 			sourceTree = "<group>";
 		};
 		A97AB5D428380C1E0024C3A5 /* ImagePicker */ = {
@@ -82,16 +84,6 @@
 				A97AB5D528380C2D0024C3A5 /* ImagePicker.swift */,
 			);
 			path = ImagePicker;
-			sourceTree = "<group>";
-		};
-		A9997DC2283B7562001CF94A /* OnBoarding */ = {
-			isa = PBXGroup;
-			children = (
-				A96BDEC1283B7D46000E7E34 /* OnboardingDataModel.swift */,
-				A96BDEC3283B7D87000E7E34 /* OnboardingStepView.swift */,
-				A96BDEC5283B7DF6000E7E34 /* OnboardingViewPure.swift */,
-			);
-			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 		A9CD1800283CD585006F0F37 /* AudioRecorder */ = {
@@ -111,14 +103,14 @@
 		A9F295222836709200527328 = {
 			isa = PBXGroup;
 			children = (
-				A9F2952E2836709200527328 /* AppMapApp.swift */,
-				A9024FBE2837963400830255 /* MapViewApp.swift */,
+				A89664C82851912A00BE043A /* MapView */,
+				A9F2952E2836709200527328 /* GetLostApp.swift */,
 				A97AB5D22837F6370024C3A5 /* DeriveView.swift */,
+				A89664BF2851053500BE043A /* emptyDerive.swift */,
 				A97AB5D92838F0000024C3A5 /* CollectionView.swift */,
 				A85E6B78283E3F8200161AEC /* UserSettings.swift */,
+				A88E28F6283F723E008E0F1C /* OnboardingView.swift */,
 				A9CD1800283CD585006F0F37 /* AudioRecorder */,
-				A88E28FA283F72EE008E0F1C /* OnboardingNew */,
-				A9997DC2283B7562001CF94A /* OnBoarding */,
 				A97AB5D428380C1E0024C3A5 /* ImagePicker */,
 				A9F295342836709200527328 /* Preview Content */,
 				A9F295322836709200527328 /* Assets.xcassets */,
@@ -129,7 +121,7 @@
 		A9F2952C2836709200527328 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A9F2952B2836709200527328 /* AppMap.app */,
+				A9F2952B2836709200527328 /* GetLost.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -145,9 +137,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A9F2952A2836709200527328 /* AppMap */ = {
+		A9F2952A2836709200527328 /* GetLost */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A9F2954F2836709300527328 /* Build configuration list for PBXNativeTarget "AppMap" */;
+			buildConfigurationList = A9F2954F2836709300527328 /* Build configuration list for PBXNativeTarget "GetLost" */;
 			buildPhases = (
 				A9F295272836709200527328 /* Sources */,
 				A9F295282836709200527328 /* Frameworks */,
@@ -157,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = AppMap;
+			name = GetLost;
 			productName = AppMap;
-			productReference = A9F2952B2836709200527328 /* AppMap.app */;
+			productReference = A9F2952B2836709200527328 /* GetLost.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,7 +169,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A9F295262836709200527328 /* Build configuration list for PBXProject "AppMap" */;
+			buildConfigurationList = A9F295262836709200527328 /* Build configuration list for PBXProject "GetLost" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -190,7 +182,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A9F2952A2836709200527328 /* AppMap */,
+				A9F2952A2836709200527328 /* GetLost */,
 			);
 		};
 /* End PBXProject section */
@@ -212,25 +204,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A88E28F5283F7223008E0F1C /* OnboardingButton.swift in Sources */,
 				A97AB5D32837F6370024C3A5 /* DeriveView.swift in Sources */,
 				A9CD1815283CD827006F0F37 /* RecordingDataModel.swift in Sources */,
 				A9CD181E283CD83C006F0F37 /* Helper.swift in Sources */,
 				A97AB5D628380C2D0024C3A5 /* ImagePicker.swift in Sources */,
+				A89664CE2851917B00BE043A /* Home.swift in Sources */,
 				A9CD1816283CD827006F0F37 /* RecorderAudio.swift in Sources */,
-				A9024FBF2837963400830255 /* MapViewApp.swift in Sources */,
+				A9024FBF2837963400830255 /* MapViewOld.swift in Sources */,
+				A89664D02851919800BE043A /* MapView.swift in Sources */,
 				A9CD181D283CD83C006F0F37 /* AudioRecorder .swift in Sources */,
 				A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */,
 				A85E6B79283E3F8200161AEC /* UserSettings.swift in Sources */,
-				A96BDEC4283B7D87000E7E34 /* OnboardingStepView.swift in Sources */,
+				A89664C02851053500BE043A /* emptyDerive.swift in Sources */,
 				A9CD181B283CD83C006F0F37 /* Extensions.swift in Sources */,
-				A9F2952F2836709200527328 /* AppMapApp.swift in Sources */,
-				A96BDEC6283B7DF6000E7E34 /* OnboardingViewPure.swift in Sources */,
+				A89664CA2851914300BE043A /* Place.swift in Sources */,
+				A9F2952F2836709200527328 /* GetLostApp.swift in Sources */,
+				A89664CC2851915C00BE043A /* MapViewModel.swift in Sources */,
 				A9CD1814283CD827006F0F37 /* RecordingList.swift in Sources */,
 				A9CD181C283CD83C006F0F37 /* AudioPlayer.swift in Sources */,
-				A88E28F7283F723E008E0F1C /* OnboardingViewModel.swift in Sources */,
-				A96BDEC2283B7D46000E7E34 /* OnboardingDataModel.swift in Sources */,
-				A88E28F9283F7267008E0F1C /* OnboardingView.swift in Sources */,
+				A88E28F7283F723E008E0F1C /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +279,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -341,7 +333,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -356,6 +348,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -363,13 +356,16 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppMap/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Camera;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Help to create a community";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = PhotoLibrary;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +373,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = oasis.AppMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -388,6 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -395,13 +393,16 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppMap/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = Camera;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Help to create a community";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = PhotoLibrary;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +410,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = oasis.AppMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,7 +420,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A9F295262836709200527328 /* Build configuration list for PBXProject "AppMap" */ = {
+		A9F295262836709200527328 /* Build configuration list for PBXProject "GetLost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9F2954D2836709300527328 /* Debug */,
@@ -427,7 +429,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A9F2954F2836709300527328 /* Build configuration list for PBXNativeTarget "AppMap" */ = {
+		A9F2954F2836709300527328 /* Build configuration list for PBXNativeTarget "GetLost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A9F295502836709300527328 /* Debug */,

@@ -9,28 +9,20 @@ import SwiftUI
 
 @main
 
-struct AppMapApp: App {
+struct GetLostApp: App {
     @ObservedObject var settings = UserSettings()
 
     var body: some Scene {
         WindowGroup {
             if !settings.isOnboardingShown {
                 NavigationView {
-                    OnboardingView(list: onboardingList, index: 0, isOnboardingShown: $settings.isOnboardingShown)
-
+                    OnboardingView(isOnboardingShown: $settings.isOnboardingShown)
                 }
             } else {
-                MapViewApp()
-                    .environmentObject(settings)
+                //                Home()
+                //                    .environmentObject(settings)
+                emptyDerive()
             }
         }
     }
 }
-
-//struct AppMapApp: App {
-//    var body: some Scene {
-//        WindowGroup {
-//            MapViewApp()
-//        }
-//    }
-//}
