@@ -1,8 +1,8 @@
 //
 //  UserSettings.swift
-//  Arcadia11
+//  GetLost
 //
-//  Created by Muhamed Agakishiev on 21/11/21.
+//  Created by Muhamed Agakishiev on 26/05/22.
 //
 
 import Foundation

@@ -1,6 +1,6 @@
 //
-//  AppMapApp.swift
-//  AppMap
+//  GetLostApp.swift
+//  GetLost
 //
 //  Created by Antonio Amoroso on 19/05/22.
 //

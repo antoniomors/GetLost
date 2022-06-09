@@ -1,6 +1,6 @@
 //
 //  OnboardingViewModel.swift
-//  AppMap
+//  GetLost
 //
 //  Created by Muhamed Agakishiev on 26/05/22.
 //

@@ -1,6 +1,6 @@
 //
 //  CollectionView.swift
-//  AppMap
+//  GetLost
 //
 //  Created by Antonio Amoroso on 21/05/22.
 //
