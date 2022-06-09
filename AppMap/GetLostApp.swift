@@ -19,9 +19,9 @@ struct GetLostApp: App {
                     OnboardingView(isOnboardingShown: $settings.isOnboardingShown)
                 }
             } else {
-                //                Home()
-                //                    .environmentObject(settings)
-                emptyDerive()
+                Home()
+                    .environmentObject(settings)
+                //                emptyDerive()
             }
         }
     }
