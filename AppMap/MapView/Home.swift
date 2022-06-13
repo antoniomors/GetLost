@@ -6,14 +6,10 @@
 //
 
 import SwiftUI
-import CoreLocation
 
 struct Home: View {
 
     @StateObject var mapData = MapViewModel()
-    // Location Manager....
-    @State var locationManager = CLLocationManager()
-
     init() {
         UITabBar.appearance().backgroundColor = UIColor.black
     }
@@ -103,12 +99,6 @@ struct Home: View {
                         .frame(height: 30)
                 }
             }
-            .onAppear(perform: {
-
-                // Setting Delegate...
-                locationManager.delegate = mapData
-                locationManager.requestWhenInUseAuthorization()
-            })
             // Permission Denied Alert...
             .alert(isPresented: $mapData.permissionDenied, content: {
 

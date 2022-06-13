@@ -11,8 +11,8 @@ import CoreLocation
 
 // All Map Data Goes Here....
 
-class MapViewModel: NSObject,ObservableObject,CLLocationManagerDelegate{
-
+class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
+    let locationManager = CLLocationManager()
     @Published var mapView = MKMapView()
 
     // Region...
@@ -33,6 +33,13 @@ class MapViewModel: NSObject,ObservableObject,CLLocationManagerDelegate{
 
     // Updating Map Type...
 
+    override init() {
+        super.init()
+        // Setting Delegate...
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+    }
+
     func updateMapType(){
 
         if mapType == .standard{
@@ -47,9 +54,9 @@ class MapViewModel: NSObject,ObservableObject,CLLocationManagerDelegate{
 
     // Focus Location...
 
-    func focusLocation(){
-
-        guard let _ = region else{return}
+    func focusLocation() {
+        locationManager.requestLocation()
+        guard let _ = region else{ return }
 
         mapView.setRegion(region, animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)

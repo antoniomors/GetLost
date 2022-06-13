@@ -9,7 +9,6 @@ import SwiftUI
 import MapKit
 
 struct MapView: UIViewRepresentable {
-
     @EnvironmentObject var mapData: MapViewModel
 
     func makeCoordinator() -> Coordinator {
@@ -23,6 +22,7 @@ struct MapView: UIViewRepresentable {
         view.showsUserLocation = true
         view.delegate = context.coordinator
         view.pointOfInterestFilter = .excludingAll
+
         return view
     }
 
