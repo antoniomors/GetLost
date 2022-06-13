@@ -88,6 +88,24 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		A84E18B62857B76F00A7DFCC /* DeriveView */ = {
+			isa = PBXGroup;
+			children = (
+				A89664BF2851053500BE043A /* emptyDerive.swift */,
+				A97AB5D22837F6370024C3A5 /* DeriveView.swift */,
+			);
+			path = DeriveView;
+			sourceTree = "<group>";
+		};
+		A84E18B72857B7B400A7DFCC /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A84E186E28572A5D00A7DFCC /* ImagePicker.swift */,
+				A84E187028572A6100A7DFCC /* CustomImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		A89664C82851912A00BE043A /* MapView */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,13 +137,11 @@
 			children = (
 				A89664C82851912A00BE043A /* MapView */,
 				A84E18B42857683E00A7DFCC /* CollectionView */,
+				A84E18B62857B76F00A7DFCC /* DeriveView */,
+				A84E18B72857B7B400A7DFCC /* ImagePicker */,
 				A9F2952E2836709200527328 /* GetLostApp.swift */,
-				A97AB5D22837F6370024C3A5 /* DeriveView.swift */,
-				A89664BF2851053500BE043A /* emptyDerive.swift */,
 				A85E6B78283E3F8200161AEC /* UserSettings.swift */,
 				A88E28F6283F723E008E0F1C /* OnboardingView.swift */,
-				A84E186E28572A5D00A7DFCC /* ImagePicker.swift */,
-				A84E187028572A6100A7DFCC /* CustomImagePicker.swift */,
 				A9CD1800283CD585006F0F37 /* AudioRecorder */,
 				A9F295342836709200527328 /* Preview Content */,
 				A9F295322836709200527328 /* Assets.xcassets */,

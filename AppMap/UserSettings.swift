@@ -14,8 +14,4 @@ class UserSettings: ObservableObject {
     var isOnboardingShown: Bool = false
     @AppStorage("cardListSave")
     var cardListSave: [CardModel] = []
-
-    func reset() {
-        isOnboardingShown = false
-    }
 }
