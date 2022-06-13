@@ -34,14 +34,14 @@ struct Home: View {
                         HStack{
 
                             Image(systemName: "magnifyingglass")
-                                .foregroundColor(.gray)
+                                .foregroundColor(.white)
 
                             TextField("Search", text: $mapData.searchTxt)
                                 .foregroundColor(.white)
                         }
                         .padding(.vertical,8)
                         .padding(.horizontal)
-                        .background(.gray.opacity(0.5))
+                        .background(.gray.opacity(0.7))
                         .cornerRadius(10)
 
                         // Displaying Results...
@@ -68,7 +68,7 @@ struct Home: View {
                                 }
                                 .padding(.top)
                             }
-                            .background(Color.white)
+                            .background(.gray)
                         }
 
                     }
@@ -141,6 +141,7 @@ struct Home: View {
                 Text("Map")
             }
             NavigationView{
+//                emptyDerive()
                 DeriveView()
                     .navigationTitle("GetLost")
             }
@@ -166,4 +167,3 @@ struct Home_Previews: PreviewProvider {
         Home()
     }
 }
-
