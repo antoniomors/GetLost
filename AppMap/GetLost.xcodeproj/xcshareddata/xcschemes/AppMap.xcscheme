@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A9F2952A2836709200527328"
-               BuildableName = "AppMap.app"
+               BuildableName = "GetLost.app"
                BlueprintName = "GetLost"
                ReferencedContainer = "container:GetLost.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9F2952A2836709200527328"
-            BuildableName = "AppMap.app"
+            BuildableName = "GetLost.app"
             BlueprintName = "GetLost"
             ReferencedContainer = "container:GetLost.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A9F2952A2836709200527328"
-            BuildableName = "AppMap.app"
+            BuildableName = "GetLost.app"
             BlueprintName = "GetLost"
             ReferencedContainer = "container:GetLost.xcodeproj">
          </BuildableReference>

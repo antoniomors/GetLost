@@ -14,15 +14,15 @@ struct GetLostApp: App {
 
     var body: some Scene {
         WindowGroup {
-            if !settings.isOnboardingShown {
-                NavigationView {
-                    OnboardingView(isOnboardingShown: $settings.isOnboardingShown)
+            Group {
+                if !settings.isOnboardingShown {
+                    NavigationView {
+                        OnboardingView(isOnboardingShown: $settings.isOnboardingShown)
+                    }
+                } else {
+                    Home()
                 }
-            } else {
-                Home()
-                    .environmentObject(settings)
-                //                emptyDerive()
-            }
+            }.environmentObject(settings)
         }
     }
 }
