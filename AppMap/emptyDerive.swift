@@ -9,6 +9,7 @@ import SwiftUI
 
 struct emptyDerive: View {
     @State var showNewDerive = false
+
     var body: some View {
         NavigationView {
             VStack {
@@ -19,12 +20,12 @@ struct emptyDerive: View {
 
                 Text("No Dérive created yet\n\n")
                     .font(.system(size: 24))
-                    .padding(40)
+                    .padding(30)
                 Button(action: {
                     self.showNewDerive.toggle()
                 }, label: {
                     Image(systemName: "folder.badge.plus")
-                        .font(.system(size: 50))
+                        .font(.system(size: 48))
                 }
                 ).foregroundColor(.white)
                     .sheet(isPresented: $showNewDerive) {
@@ -39,12 +40,42 @@ struct emptyDerive: View {
 }
 
 struct newDerive: View {
+    @State var showNewDerive = false
     @State private var name: String = ""
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject private var settings = UserSettings()
+
     var body: some View {
-        VStack {
-            Text("Create your new Dérive")
-            TextField("Search", text: $name)
-                .textFieldStyle(.roundedBorder)
+        NavigationView {
+            VStack {
+                Text("Create your new Dérive")
+                    .font(.system(size: 24))
+                    .navigationBarItems(leading: Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("Cancel")
+                            .bold()
+                            .foregroundColor(.white)
+                    }, trailing: Button (action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                        let newModel = CardModel(title: name)
+                        settings.cardListSave.append(newModel)
+                    }) {
+                        Text("Done")
+                            .bold()
+                            .foregroundColor(.white)
+                    });
+                Spacer()
+                TextField("Insert project title...", text: $name)
+                    .frame(width: 300)
+                    .padding(10)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 60)
+                            .stroke(.gray)
+                    )
+                Spacer()
+                    .frame(height: 500)
+            }
         }
     }
 }
