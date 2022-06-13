@@ -12,7 +12,9 @@ import SwiftUI
 class UserSettings: ObservableObject {
     @AppStorage("isOnboardingShown")
     var isOnboardingShown: Bool = false
-    
+    @AppStorage("cardListSave")
+    var cardListSave: [CardModel] = []
+
     func reset() {
         isOnboardingShown = false
     }
