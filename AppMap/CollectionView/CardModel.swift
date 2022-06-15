@@ -10,10 +10,12 @@ import Foundation
 struct CardModel: Identifiable {
     let id: UUID
     var title: String
+    var imageURL: URL?
 
-    init(id: UUID = UUID(), title: String) {
+    init(id: UUID = UUID(), title: String, imageURL: URL? = nil) {
         self.id = id
         self.title = title
+        self.imageURL = imageURL
     }
 }
 

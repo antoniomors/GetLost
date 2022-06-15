@@ -10,6 +10,7 @@ import SwiftUI
 struct SenseView: View {
 
     @Binding var rootIsActive: Bool
+    let image: UIImage?
 
     // 5 colors of senses
     let gradientWithFourColors = Gradient(colors: [
@@ -20,6 +21,8 @@ struct SenseView: View {
         Color("ColorButton5")
     ]
     )
+
+    @ObservedObject private var settings = UserSettings()
 
     // angular gradient var
     let angularGradient = AngularGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3"), Color("ButtonColor4"), Color("ButtonColor5")] ), center: .center, startAngle: .degrees(0), endAngle: .degrees(360))
@@ -39,7 +42,10 @@ struct SenseView: View {
                     .font(.system(size: 24))
                     .font(.title)
 
+                // тут список (card list)
+
                 Button(action: {
+                    savePhoto()
                     rootIsActive = false
                 }, label: {
                     Text("Done")
@@ -54,6 +60,27 @@ struct SenseView: View {
         }.background(.black)
             .navigationBarHidden(true)
                 .navigationBarHidden(true)
+    }
+
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+
+    private func savePhoto() {
+        var allModels = settings.cardListSave
+
+        if allModels.count >= 1, let image = image, let data = image.jpegData(compressionQuality: 0.8) {
+            let modelIndex = 0 // TODO: save photo not to first but to selected card
+            var selectedModel = allModels[modelIndex]
+
+            let fileURL = getDocumentsDirectory().appendingPathComponent("\(selectedModel.id.uuidString).png")
+            try? data.write(to: fileURL)
+
+            selectedModel.imageURL = fileURL
+            allModels[modelIndex] = selectedModel
+            settings.cardListSave = allModels
+        }
     }
 }
 

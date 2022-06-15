@@ -13,15 +13,45 @@ struct DetailView: View {
                           Sense(name: "Via Mazzi, Naples", creation: "08/04/2021", emote: Image(systemName: "hand.wave"), color: .yellow)]
 
     var body: some View {
+        GeometryReader { proxy in
         ScrollView {
-            VStack{
+            VStack {
+                if let url = scrum.imageURL {
+//                    AsyncImage(url: url)
+//                    { image in
+//                        image
+////                            .resizable()
+//
+//                    } placeholder: {
+//                        EmptyView()
+//                    }
+                    AsyncImage(url: url) { phase in
+                                    switch phase {
+                                    case .empty:
+                                        ProgressView()
+                                    case .success(let image):
+                                        image.resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: proxy.size.width)
+                                            .frame(height: 500)
+                                    case .failure:
+                                        Image(systemName: "photo")
+                                    @unknown default:
+                                        // Since the AsyncImagePhase enum isn't frozen,
+                                        // we need to add this currently unused fallback
+                                        // to handle any new cases that might be added
+                                        // in the future:
+                                        EmptyView()
+                                    }
+                                }
 
+                }
                 ForEach(sense) { i in
                     Card(text: i)
                 }
             }
             Spacer()
-
+        }
         }
         .navigationTitle(scrum.title)
     }

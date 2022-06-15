@@ -113,8 +113,11 @@ struct photoView: View {
             } else {
 
                 Button(action: {
+                    
                 }, label: {
-                    NavigationLink(destination: SenseView(rootIsActive: $rootIsActive)) { Text("Use Photo")
+                    NavigationLink(
+                        destination: SenseView(rootIsActive: $rootIsActive, image: viewModel.selectedImage)
+                    ) { Text("Use Photo")
                     }
                 })
             }
@@ -123,7 +126,7 @@ struct photoView: View {
             .navigationBarHidden(true)
             .fullScreenCover(isPresented: $viewModel.isPresentingImagePicker, content: {
                 if viewModel.sourceType == .camera {
-                    CameraView(sourceType: viewModel.sourceType)
+                    CameraView(sourceType: viewModel.sourceType, isPresentingImagePicker: $viewModel.isPresentingImagePicker, selectedImage: $viewModel.selectedImage)
                     //                    ImagePicker(sourceType: viewModel.sourceType, completionHandler: viewModel.didSelectImage, date: $viewModel.date, location: $viewModel.region.center)
                 } else if viewModel.sourceType == .photoLibrary {
                     CustomPhotoPickerView(selectedImage: $viewModel.selectedImage, date: $viewModel.date, location: $viewModel.region.center)
