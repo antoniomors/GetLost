@@ -6,16 +6,43 @@
 //
 
 import Foundation
+import CoreLocation
+
+struct Coordinate: Codable {
+    let latitude: Double
+    let longitude: Double
+
+    var clCoordinate: CLLocationCoordinate2D {
+        .init(latitude: latitude, longitude: longitude)
+    }
+}
+
+extension CLLocationCoordinate2D {
+    var coordinate: Coordinate {
+        .init(latitude: latitude, longitude: longitude)
+    }
+
+    init(coordinate: Coordinate) {
+        self.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
+    }
+}
+
+struct PhotoModel {
+    let imageURL: URL
+    let location: Coordinate
+}
+
+extension PhotoModel: Codable {}
 
 struct CardModel: Identifiable {
     let id: UUID
     var title: String
-    var imageURL: URL?
+    var photo: PhotoModel?
 
-    init(id: UUID = UUID(), title: String, imageURL: URL? = nil) {
+    init(id: UUID = UUID(), title: String, photo: PhotoModel? = nil) {
         self.id = id
         self.title = title
-        self.imageURL = imageURL
+        self.photo = photo
     }
 }
 
@@ -52,30 +79,3 @@ extension Array: RawRepresentable where Element: Codable {
         return result
     }
 }
-
-//extension Array: RawRepresentable where Element == CardModel {
-//    public init?(rawValue: String) {
-//        guard let data = rawValue.data(using: .utf8),
-//            let result = try? JSONDecoder().decode([CardModel].self, from: data)
-//        else {
-//            return nil
-//        }
-//        self = result
-//    }
-//
-//    public var rawValue: String {
-//        guard let data = try? JSONEncoder().encode(self),
-//            let result = String(data: data, encoding: .utf8)
-//        else {
-//            return "[]"
-//        }
-//        return result
-//    }
-//}
-
-//extension CardModel {
-//    static let sampleData: [CardModel] =
-//    [
-//
-//    ]
-//}

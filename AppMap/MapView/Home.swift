@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct Home: View {
 
@@ -15,13 +16,42 @@ struct Home: View {
         UITabBar.appearance().backgroundColor = UIColor.black
     }
 
+    @State var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 20.0,
+            longitude: 20.0),
+        latitudinalMeters: .init(10000),
+        longitudinalMeters: .init(10000))
+
     var body: some View {
         TabView {
             ZStack{
 
-                // MapView...
+                let regionWithOffset = Binding<MKCoordinateRegion>(
+                    get: {
+                        let offsetCenter = CLLocationCoordinate2D(latitude: region.center.latitude + region.span.latitudeDelta * 0.30, longitude: region.center.longitude)
+                        return MKCoordinateRegion(
+                            center: offsetCenter,
+                            span: region.span)
+                    },
+                    set: {
+                        $0
+                    }
+                )
+
+                //    MapPin if else
+                if let cardsWithLocation = Optional(settings.cardListSave.filter({ $0.photo != nil })) {
+                    Map(coordinateRegion: regionWithOffset, annotationItems: cardsWithLocation) { card in
+                        MapAnnotation(coordinate: card.photo!.location.clCoordinate) {
+                            PlaceAnnotationView(title: card.title)
+                        }
+                    }
+                }
+                else {
+                    Map(coordinateRegion: regionWithOffset, interactionModes: MapInteractionModes.all)
+                }
+
                 MapView()
-                // using it as environment object so that it can be used ints subViews....
                     .environmentObject(mapData)
                     .ignoresSafeArea(.all, edges: .all)
 

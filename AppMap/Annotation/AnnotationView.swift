@@ -15,7 +15,8 @@ struct Placito: Identifiable {
 }
 
 struct AnnotationView: View {
-//  @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 40.748433, longitude: -73.985656), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+
+    @ObservedObject private var settings = UserSettings()
     @State var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(
             latitude: 20.0,
@@ -37,10 +38,15 @@ struct AnnotationView: View {
           }
       )
 
-      Map(coordinateRegion: regionWithOffset, interactionModes: MapInteractionModes.all, annotationItems: [region.center]) { place in
-          MapAnnotation(coordinate: place) {
-              PlaceAnnotationView(title: "Tittle")
+      if let cardsWithLocation = Optional(settings.cardListSave.filter({ $0.photo != nil })) {
+          Map(coordinateRegion: regionWithOffset, annotationItems: cardsWithLocation) { card in
+              MapAnnotation(coordinate: card.photo!.location.clCoordinate) {
+                  PlaceAnnotationView(title: card.title)
+              }
           }
+      }
+      else {
+          Map(coordinateRegion: regionWithOffset, interactionModes: MapInteractionModes.all)
       }
   }
 }

@@ -16,7 +16,7 @@ struct DetailView: View {
         GeometryReader { proxy in
         ScrollView {
             VStack {
-                if let url = scrum.imageURL {
+                if let url = scrum.photo?.imageURL {
                     AsyncImage(url: url) { phase in
                                     switch phase {
                                     case .empty:
@@ -37,6 +37,9 @@ struct DetailView: View {
                                     }
                                 }
 
+                }
+                if let location = scrum.photo?.location {
+                    Text("lon: \(location.longitude), lat: \(location.latitude)")
                 }
                 ForEach(sense) { i in
                     Card(text: i)

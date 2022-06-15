@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct SenseView: View {
 
     @Binding var rootIsActive: Bool
     let image: UIImage?
+    let location: CLLocationCoordinate2D?
 
     // 5 colors of senses
     let gradientWithFourColors = Gradient(colors: [
@@ -70,9 +72,13 @@ struct SenseView: View {
     private func savePhoto() {
         var allModels = settings.cardListSave
 
-        if allModels.count >= 1, let image = image, let data = image.jpegData(compressionQuality: 0.8) {
+        if allModels.count >= 1,
+           let image = image,
+           let location = location,
+           let data = image.jpegData(compressionQuality: 0.8) {
             let modelIndex = 0
             #warning("Look Here")
+
             // TODO: save photo not to first but to selected card
 
             var selectedModel = allModels[modelIndex]
@@ -80,7 +86,7 @@ struct SenseView: View {
             let fileURL = getDocumentsDirectory().appendingPathComponent("\(selectedModel.id.uuidString).png")
             try? data.write(to: fileURL)
 
-            selectedModel.imageURL = fileURL
+            selectedModel.photo = PhotoModel(imageURL: fileURL, location: location.coordinate)
             allModels[modelIndex] = selectedModel
             settings.cardListSave = allModels
         }

@@ -102,8 +102,6 @@ struct photoView: View {
         }.padding()
     }
 
-    @State private var action: Int? = 0
-
     var body: some View {
 
         VStack {
@@ -116,7 +114,11 @@ struct photoView: View {
                     
                 }, label: {
                     NavigationLink(
-                        destination: SenseView(rootIsActive: $rootIsActive, image: viewModel.selectedImage)
+                        destination: SenseView(
+                            rootIsActive: $rootIsActive,
+                            image: viewModel.selectedImage,
+                            location: viewModel.region.center
+                        )
                     ) { Text("Use Photo")
                     }
                 })
@@ -127,7 +129,6 @@ struct photoView: View {
             .fullScreenCover(isPresented: $viewModel.isPresentingImagePicker, content: {
                 if viewModel.sourceType == .camera {
                     CameraView(sourceType: viewModel.sourceType, isPresentingImagePicker: $viewModel.isPresentingImagePicker, selectedImage: $viewModel.selectedImage)
-                    //                    ImagePicker(sourceType: viewModel.sourceType, completionHandler: viewModel.didSelectImage, date: $viewModel.date, location: $viewModel.region.center)
                 } else if viewModel.sourceType == .photoLibrary {
                     CustomPhotoPickerView(selectedImage: $viewModel.selectedImage, date: $viewModel.date, location: $viewModel.region.center)
                 }
