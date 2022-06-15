@@ -57,9 +57,6 @@ extension CameraView {
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
                 UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
-
-//                NavigationLink(destination: SenseView(rootIsActive: $rootIsActive)) { Text("Use Photo")
-//                }
                 onFetchImage(image)
                 isPresentingImagePicker.toggle()
             }

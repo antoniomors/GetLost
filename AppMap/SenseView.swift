@@ -41,8 +41,8 @@ struct SenseView: View {
                 Text("Where do you want to store your note?")
                     .font(.system(size: 24))
                     .font(.title)
-
-                // тут список (card list)
+#warning("Look Here")
+                // TODO: (card list)
 
                 Button(action: {
                     savePhoto()
@@ -71,7 +71,10 @@ struct SenseView: View {
         var allModels = settings.cardListSave
 
         if allModels.count >= 1, let image = image, let data = image.jpegData(compressionQuality: 0.8) {
-            let modelIndex = 0 // TODO: save photo not to first but to selected card
+            let modelIndex = 0
+            #warning("Look Here")
+            // TODO: save photo not to first but to selected card
+
             var selectedModel = allModels[modelIndex]
 
             let fileURL = getDocumentsDirectory().appendingPathComponent("\(selectedModel.id.uuidString).png")

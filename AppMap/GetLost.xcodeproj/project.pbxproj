@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A84E186F28572A5D00A7DFCC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E186E28572A5D00A7DFCC /* ImagePicker.swift */; };
 		A84E187128572A6100A7DFCC /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E187028572A6100A7DFCC /* CustomImagePicker.swift */; };
 		A84E18A92857629D00A7DFCC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E18A82857629D00A7DFCC /* CardView.swift */; };
 		A84E18AB2857635000A7DFCC /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E18AA2857635000A7DFCC /* CardModel.swift */; };
@@ -33,7 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A84E186E28572A5D00A7DFCC /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		A84E187028572A6100A7DFCC /* CustomImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
 		A84E18A82857629D00A7DFCC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A84E18AA2857635000A7DFCC /* CardModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModel.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				A8B05D31285A05700076B972 /* CameraView.swift */,
-				A84E186E28572A5D00A7DFCC /* ImagePicker.swift */,
 				A84E187028572A6100A7DFCC /* CustomImagePicker.swift */,
 			);
 			path = ImagePicker;
@@ -233,7 +230,6 @@
 				A89664CE2851917B00BE043A /* Home.swift in Sources */,
 				A89664D02851919800BE043A /* MapView.swift in Sources */,
 				A84E18A92857629D00A7DFCC /* CardView.swift in Sources */,
-				A84E186F28572A5D00A7DFCC /* ImagePicker.swift in Sources */,
 				A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */,
 				A85E6B79283E3F8200161AEC /* UserSettings.swift in Sources */,
 				A869B17A2858A9D100F5E151 /* AnnotationView.swift in Sources */,

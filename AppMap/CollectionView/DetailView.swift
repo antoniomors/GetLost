@@ -17,14 +17,6 @@ struct DetailView: View {
         ScrollView {
             VStack {
                 if let url = scrum.imageURL {
-//                    AsyncImage(url: url)
-//                    { image in
-//                        image
-////                            .resizable()
-//
-//                    } placeholder: {
-//                        EmptyView()
-//                    }
                     AsyncImage(url: url) { phase in
                                     switch phase {
                                     case .empty:
