@@ -40,15 +40,12 @@ struct DeriveView: View {
                         .offset(x: 0, y: -100)
 
                     Button(action: {
-                        selection = "A"
-
+                    selection = "A"
                     }, label: {
-
                         NavigationLink(destination: photoView(), tag: "A", selection: $selection) { Text("+")
                                 .offset(x: 5, y: -110)
                         }
                     })
-
                 }
                 .font(.system(size: 170))
                 .foregroundColor(.white)
@@ -63,7 +60,6 @@ struct DeriveView: View {
         }
     }
 }
-
 
 struct DeriveView_Previews: PreviewProvider {
     static var previews: some View {
@@ -82,7 +78,6 @@ struct photoView: View {
         if let image = image {
             Image(uiImage: image)
                 .resizable()
-                .scaledToFill()
         }
         else {
             Text("No Image Selected")
@@ -94,29 +89,41 @@ struct photoView: View {
     func controlBar() -> some View {
         HStack(spacing: 32) {
             Button(action: viewModel.choosePhoto, label: {
-                Text("Choose a Photo")
+                Text("Choose Photo")
             })
             Button(action: viewModel.takePhoto, label: {
-                Text("Take a Photo")
+                Text("Take Photo")
             })
         }.padding()
     }
+
+    @State private var action: Int? = 0
 
     var body: some View {
 
         VStack {
             imageView(for: viewModel.selectedImage)
-            controlBar()
+            if viewModel.selectedImage == nil {
+                controlBar()
+            } else {
 
-        }.navigationBarTitle("Camera")
+                Button(action: {
+                }, label: {
+                    NavigationLink(destination: SenseView()) { Text("Use Photo")
+                    }
+                })
+            }
+
+        }.navigationBarHidden(true)
+            .navigationBarHidden(true)
             .fullScreenCover(isPresented: $viewModel.isPresentingImagePicker, content: {
                 if viewModel.sourceType == .camera {
-                    ImagePicker(sourceType: viewModel.sourceType, completionHandler: viewModel.didSelectImage, date: $viewModel.date, location: $viewModel.region.center)
+                    CameraView(sourceType: viewModel.sourceType)
+                    //                    ImagePicker(sourceType: viewModel.sourceType, completionHandler: viewModel.didSelectImage, date: $viewModel.date, location: $viewModel.region.center)
                 } else if viewModel.sourceType == .photoLibrary {
                     CustomPhotoPickerView(selectedImage: $viewModel.selectedImage, date: $viewModel.date, location: $viewModel.region.center)
                 }
             })
-
     }
 }
 
@@ -134,7 +141,8 @@ class ViewModel: ObservableObject {
         longitudinalMeters: .init(10000))
 
 
-    private(set) var sourceType: ImagePicker.SourceType = .camera
+    //    private(set) var sourceType: ImagePicker.SourceType = .camera
+    private(set) var sourceType: CameraView.SourceType = .camera
 
 
     func choosePhoto() {

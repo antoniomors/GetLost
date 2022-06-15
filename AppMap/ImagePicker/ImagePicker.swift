@@ -44,7 +44,6 @@ struct ImagePicker: UIViewControllerRepresentable {
                    
                     // here goes the current position request
                     print(info)
-                    let date = Date()
                     return image
                     
                 }
@@ -109,9 +108,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
-
 struct photoPic: Identifiable {
     var id = UUID()
     var imageT: UIImage
 }
-
