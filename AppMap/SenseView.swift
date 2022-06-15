@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SenseView: View {
 
+    @Binding var rootIsActive: Bool
+
     // 5 colors of senses
     let gradientWithFourColors = Gradient(colors: [
         Color("ColorButton1"),
@@ -38,7 +40,7 @@ struct SenseView: View {
                     .font(.title)
 
                 Button(action: {
-//action on close
+                    rootIsActive = false
                 }, label: {
                     Text("Done")
                         .font(.system(size: 23))

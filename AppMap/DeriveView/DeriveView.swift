@@ -30,6 +30,7 @@ struct DeriveView: View {
     @State var selectedIndex: Int = 0
 
     @State private var showImagePicker: Bool = false
+    @State var rootIsActive: Bool = false
 
     var body: some View {
         NavigationView {
@@ -40,9 +41,10 @@ struct DeriveView: View {
                         .offset(x: 0, y: -100)
 
                     Button(action: {
-                    selection = "A"
+                        rootIsActive = false
                     }, label: {
-                        NavigationLink(destination: photoView(), tag: "A", selection: $selection) { Text("+")
+                        NavigationLink(destination: photoView(rootIsActive: $rootIsActive), isActive: $rootIsActive) {
+                            Text("+")
                                 .offset(x: 5, y: -110)
                         }
                     })
@@ -70,6 +72,7 @@ struct DeriveView_Previews: PreviewProvider {
 // navigation view link
 struct photoView: View {
     @StateObject var viewModel = ViewModel()
+    @Binding var rootIsActive: Bool
 
     @ViewBuilder
 
@@ -88,7 +91,9 @@ struct photoView: View {
     // this is for the 2 buttons
     func controlBar() -> some View {
         HStack(spacing: 32) {
-            Button(action: viewModel.choosePhoto, label: {
+            Button(action:
+                    viewModel.choosePhoto
+                   , label: {
                 Text("Choose Photo")
             })
             Button(action: viewModel.takePhoto, label: {
@@ -109,7 +114,7 @@ struct photoView: View {
 
                 Button(action: {
                 }, label: {
-                    NavigationLink(destination: SenseView()) { Text("Use Photo")
+                    NavigationLink(destination: SenseView(rootIsActive: $rootIsActive)) { Text("Use Photo")
                     }
                 })
             }

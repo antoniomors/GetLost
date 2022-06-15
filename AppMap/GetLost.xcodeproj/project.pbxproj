@@ -27,13 +27,6 @@
 		A8B05D34285A1E460076B972 /* SenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8B05D33285A1E460076B972 /* SenseView.swift */; };
 		A97AB5D32837F6370024C3A5 /* DeriveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D22837F6370024C3A5 /* DeriveView.swift */; };
 		A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97AB5D92838F0000024C3A5 /* CollectionView.swift */; };
-		A9CD1814283CD827006F0F37 /* RecordingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1811283CD827006F0F37 /* RecordingList.swift */; };
-		A9CD1815283CD827006F0F37 /* RecordingDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1812283CD827006F0F37 /* RecordingDataModel.swift */; };
-		A9CD1816283CD827006F0F37 /* RecorderAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1813283CD827006F0F37 /* RecorderAudio.swift */; };
-		A9CD181B283CD83C006F0F37 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1817283CD83C006F0F37 /* Extensions.swift */; };
-		A9CD181C283CD83C006F0F37 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1818283CD83C006F0F37 /* AudioPlayer.swift */; };
-		A9CD181D283CD83C006F0F37 /* AudioRecorder .swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD1819283CD83C006F0F37 /* AudioRecorder .swift */; };
-		A9CD181E283CD83C006F0F37 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CD181A283CD83C006F0F37 /* Helper.swift */; };
 		A9F2952F2836709200527328 /* GetLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2952E2836709200527328 /* GetLostApp.swift */; };
 		A9F295332836709200527328 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F295322836709200527328 /* Assets.xcassets */; };
 		A9F295362836709200527328 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9F295352836709200527328 /* Preview Assets.xcassets */; };
@@ -60,13 +53,6 @@
 		A8B05D33285A1E460076B972 /* SenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenseView.swift; sourceTree = "<group>"; };
 		A97AB5D22837F6370024C3A5 /* DeriveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeriveView.swift; sourceTree = "<group>"; };
 		A97AB5D92838F0000024C3A5 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		A9CD1811283CD827006F0F37 /* RecordingList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingList.swift; sourceTree = "<group>"; };
-		A9CD1812283CD827006F0F37 /* RecordingDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingDataModel.swift; sourceTree = "<group>"; };
-		A9CD1813283CD827006F0F37 /* RecorderAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecorderAudio.swift; sourceTree = "<group>"; };
-		A9CD1817283CD83C006F0F37 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		A9CD1818283CD83C006F0F37 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		A9CD1819283CD83C006F0F37 /* AudioRecorder .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AudioRecorder .swift"; sourceTree = "<group>"; };
-		A9CD181A283CD83C006F0F37 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		A9F2952B2836709200527328 /* GetLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F2952E2836709200527328 /* GetLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLostApp.swift; sourceTree = "<group>"; };
 		A9F295322836709200527328 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -136,20 +122,6 @@
 			path = MapView;
 			sourceTree = "<group>";
 		};
-		A9CD1800283CD585006F0F37 /* AudioRecorder */ = {
-			isa = PBXGroup;
-			children = (
-				A9CD1813283CD827006F0F37 /* RecorderAudio.swift */,
-				A9CD1812283CD827006F0F37 /* RecordingDataModel.swift */,
-				A9CD1811283CD827006F0F37 /* RecordingList.swift */,
-				A9CD1818283CD83C006F0F37 /* AudioPlayer.swift */,
-				A9CD1819283CD83C006F0F37 /* AudioRecorder .swift */,
-				A9CD1817283CD83C006F0F37 /* Extensions.swift */,
-				A9CD181A283CD83C006F0F37 /* Helper.swift */,
-			);
-			path = AudioRecorder;
-			sourceTree = "<group>";
-		};
 		A9F295222836709200527328 = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +134,6 @@
 				A85E6B78283E3F8200161AEC /* UserSettings.swift */,
 				A8B05D33285A1E460076B972 /* SenseView.swift */,
 				A88E28F6283F723E008E0F1C /* OnboardingView.swift */,
-				A9CD1800283CD585006F0F37 /* AudioRecorder */,
 				A9F295342836709200527328 /* Preview Content */,
 				A9F295322836709200527328 /* Assets.xcassets */,
 				A9F2952C2836709200527328 /* Products */,
@@ -257,30 +228,23 @@
 			files = (
 				A97AB5D32837F6370024C3A5 /* DeriveView.swift in Sources */,
 				A84E18AF2857651400A7DFCC /* DetailView.swift in Sources */,
-				A9CD1815283CD827006F0F37 /* RecordingDataModel.swift in Sources */,
 				A869B17C2858A9F000F5E151 /* PlaceAnnotationView.swift in Sources */,
-				A9CD181E283CD83C006F0F37 /* Helper.swift in Sources */,
 				A84E18AD285763B000A7DFCC /* Theme.swift in Sources */,
 				A89664CE2851917B00BE043A /* Home.swift in Sources */,
-				A9CD1816283CD827006F0F37 /* RecorderAudio.swift in Sources */,
 				A89664D02851919800BE043A /* MapView.swift in Sources */,
 				A84E18A92857629D00A7DFCC /* CardView.swift in Sources */,
 				A84E186F28572A5D00A7DFCC /* ImagePicker.swift in Sources */,
-				A9CD181D283CD83C006F0F37 /* AudioRecorder .swift in Sources */,
 				A97AB5DA2838F0000024C3A5 /* CollectionView.swift in Sources */,
 				A85E6B79283E3F8200161AEC /* UserSettings.swift in Sources */,
 				A869B17A2858A9D100F5E151 /* AnnotationView.swift in Sources */,
 				A8B05D34285A1E460076B972 /* SenseView.swift in Sources */,
 				A89664C02851053500BE043A /* emptyDerive.swift in Sources */,
-				A9CD181B283CD83C006F0F37 /* Extensions.swift in Sources */,
 				A89664CA2851914300BE043A /* Place.swift in Sources */,
 				A84E187128572A6100A7DFCC /* CustomImagePicker.swift in Sources */,
 				A9F2952F2836709200527328 /* GetLostApp.swift in Sources */,
 				A84E18AB2857635000A7DFCC /* CardModel.swift in Sources */,
 				A8B05D32285A05700076B972 /* CameraView.swift in Sources */,
 				A89664CC2851915C00BE043A /* MapViewModel.swift in Sources */,
-				A9CD1814283CD827006F0F37 /* RecordingList.swift in Sources */,
-				A9CD181C283CD83C006F0F37 /* AudioPlayer.swift in Sources */,
 				A88E28F7283F723E008E0F1C /* OnboardingView.swift in Sources */,
 				A8B05D2E285990D70076B972 /* saveAnnotation.swift in Sources */,
 			);
