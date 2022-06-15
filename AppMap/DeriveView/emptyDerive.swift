@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct emptyDerive: View {
-    @State var showNewDerive = false
+    @State var showNewDerive: Bool = false
 
     var body: some View {
         NavigationView {
@@ -42,8 +42,9 @@ struct emptyDerive: View {
 struct newDerive: View {
     @State var showNewDerive = false
     @State private var name: String = ""
-    @Environment(\.presentationMode) var presentationMode
+
     @ObservedObject private var settings = UserSettings()
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         NavigationView {
@@ -51,15 +52,19 @@ struct newDerive: View {
                 Text("Create your new Dérive")
                     .font(.system(size: 24))
                     .navigationBarItems(leading: Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.dismiss()
                     }) {
                         Text("Cancel")
                             .bold()
                             .foregroundColor(.white)
                     }, trailing: Button (action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                        let newModel = CardModel(title: name)
-                        settings.cardListSave.append(newModel)
+
+                        self.dismiss()
+
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            let newModel = CardModel(title: name)
+                            settings.cardListSave.append(newModel)
+                        }
                     }) {
                         Text("Done")
                             .bold()
@@ -80,8 +85,8 @@ struct newDerive: View {
     }
 }
 
-struct emptyDerive_Previews: PreviewProvider {
-    static var previews: some View {
-        emptyDerive()
-    }
-}
+//struct emptyDerive_Previews: PreviewProvider {
+//    static var previews: some View {
+//        emptyDerive()
+//    }
+//}

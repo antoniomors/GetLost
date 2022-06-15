@@ -2,7 +2,7 @@
 //  CustomImagePicker.swift
 //  AppMap
 //
-//  Created by Antonio Amoroso on 10/06/22.
+//  Created by Muhamed Agakishiev on 10/06/22.
 //
 
 import SwiftUI
@@ -49,7 +49,6 @@ struct CustomPhotoPickerView: UIViewControllerRepresentable {
                 let assetResults = PHAsset.fetchAssets(withLocalIdentifiers: [assetId], options: nil)
                 DispatchQueue.main.async {
                     self.parent.date = assetResults.firstObject?.creationDate
-                    print(self.parent.date)
                     print(assetResults.firstObject?.location ?? "BOH")
                     if let coordinate  = assetResults.firstObject?.location?.coordinate {
                         self.parent.location = coordinate

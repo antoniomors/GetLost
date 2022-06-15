@@ -12,6 +12,7 @@ import SwiftUI
 struct CollectionView: View {
     @State var showNewDerive = false
     @ObservedObject private var settings = UserSettings()
+    @Environment(\.presentationMode) private var presentationMode
 
     var body: some View {
         List {

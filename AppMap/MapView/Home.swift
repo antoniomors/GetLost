@@ -10,6 +10,7 @@ import SwiftUI
 struct Home: View {
 
     @StateObject var mapData = MapViewModel()
+    @ObservedObject private var settings = UserSettings()
     init() {
         UITabBar.appearance().backgroundColor = UIColor.black
     }
@@ -125,15 +126,17 @@ struct Home: View {
                 }
             })
 
-
             .tabItem {
                 Image(systemName: "map")
                 Text("Map")
             }
-            NavigationView{
-//                emptyDerive()
-                DeriveView()
-                    .navigationTitle("GetLost")
+            NavigationView {
+                if settings.cardListSave.isEmpty {
+                    emptyDerive()
+                } else {
+                    DeriveView()
+                        .navigationTitle("GetLost")
+                }
             }
             .tabItem {
                 Image(systemName: "mappin")
