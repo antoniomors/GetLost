@@ -15,7 +15,7 @@ struct CustomPhotoPickerView: UIViewControllerRepresentable {
     
     @Binding var selectedImage: UIImage?
     @Binding var date: Date?
-    @Binding var location: CLLocationCoordinate2D
+    @Binding var location: CLLocationCoordinate2D?
     
     @Environment(\.presentationMode) var presentationMode
     

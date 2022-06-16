@@ -11,6 +11,12 @@ import MapKit
 struct MapView: UIViewRepresentable {
     @EnvironmentObject var mapData: MapViewModel
 
+    @Binding var annotationItems: [CardModel]
+
+    init(annotationItems: Binding<[CardModel]>) {
+        self._annotationItems = annotationItems
+    }
+
     func makeCoordinator() -> Coordinator {
         return MapView.Coordinator()
     }
@@ -27,7 +33,17 @@ struct MapView: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: MKMapView, context: Context) {
+        let annotations: [MKPointAnnotation] = self.annotationItems.compactMap { card in
+            guard let photo = card.photo else { return nil }
+            let coordinate = photo.location.clCoordinate
+            let result = MKPointAnnotation()
+            result.coordinate = coordinate
+            result.title = card.title
+            return result
+        }
 
+        uiView.removeAnnotations(uiView.annotations)
+        uiView.addAnnotations(annotations)
     }
 
     class Coordinator: NSObject,MKMapViewDelegate{

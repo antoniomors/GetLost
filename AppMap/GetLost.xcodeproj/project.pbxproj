@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83B1B87285B36A00026FEEF /* AsyncLocationKit in Frameworks */ = {isa = PBXBuildFile; productRef = A83B1B86285B36A00026FEEF /* AsyncLocationKit */; };
 		A84E187128572A6100A7DFCC /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E187028572A6100A7DFCC /* CustomImagePicker.swift */; };
 		A84E18A92857629D00A7DFCC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E18A82857629D00A7DFCC /* CardView.swift */; };
 		A84E18AB2857635000A7DFCC /* CardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84E18AA2857635000A7DFCC /* CardModel.swift */; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A83B1B87285B36A00026FEEF /* AsyncLocationKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,6 +168,9 @@
 			dependencies = (
 			);
 			name = GetLost;
+			packageProductDependencies = (
+				A83B1B86285B36A00026FEEF /* AsyncLocationKit */,
+			);
 			productName = AppMap;
 			productReference = A9F2952B2836709200527328 /* GetLost.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +199,9 @@
 				Base,
 			);
 			mainGroup = A9F295222836709200527328;
+			packageReferences = (
+				A83B1B85285B36A00026FEEF /* XCRemoteSwiftPackageReference "AsyncLocationKit" */,
+			);
 			productRefGroup = A9F2952C2836709200527328 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -455,6 +463,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A83B1B85285B36A00026FEEF /* XCRemoteSwiftPackageReference "AsyncLocationKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AsyncSwift/AsyncLocationKit?ref=iosexample.com";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A83B1B86285B36A00026FEEF /* AsyncLocationKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A83B1B85285B36A00026FEEF /* XCRemoteSwiftPackageReference "AsyncLocationKit" */;
+			productName = AsyncLocationKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A9F295232836709200527328 /* Project object */;
 }

@@ -24,8 +24,8 @@ struct DetailView: View {
                                     case .success(let image):
                                         image.resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: proxy.size.width)
-                                            .frame(height: 500)
+//                                            .frame(width: proxy.size.width)
+                                            .frame(height: 400)
                                     case .failure:
                                         Image(systemName: "photo")
                                     @unknown default:

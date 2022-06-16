@@ -46,8 +46,8 @@ struct SimpleOnboardingView: View {
         TabView {
             FirstView(
                 viewModel:  SimpleOnboardingViewModel(
-                    text: "Welcome in GetLost!",
-                    text2: "GetLost is inspired by the **Theory of dérive** by Guy Debord\n\n\nLet yourself be drawn by an unplanned journey and enjoy the experience of an emotional disorientation",
+                    text: "Welcome \nin GetLost –\nWalking Experience",
+                    text2: "GetLost is inspired by the Theory of dérive by Guy Debord\n\n\nLet yourself be drawn by an unplanned journey and enjoy the experience of an emotional disorientation",
                     image: Image("logoIntro")
                 )
             ) {
@@ -88,12 +88,18 @@ struct FirstView: View {
         VStack {
             Text(viewModel.text)
                 .fontWeight(.bold)
+                .font(.system(size: 24))
+                .multilineTextAlignment(.center)
+
             Spacer()
             viewModel.image
                 .resizable()
-                .frame(width: 150.0, height: 150.0)
+                .scaledToFit()
+                .frame(width: 200, height: 200)
 Spacer()
             Text(viewModel.text2)
+                .frame(maxWidth: 300, alignment: .center)
+                .font(.system(size: 20))
 Spacer()
             Button(action: {
                 onSkip()
@@ -102,7 +108,7 @@ Spacer()
                     .padding(8)
             }
             .buttonStyle(OnboardingButton())
-            .padding(.horizontal, 36)
+            .padding(.horizontal, 30)
             Spacer()
         }
     }
@@ -119,10 +125,13 @@ struct SecondView: View {
     var body: some View {
         VStack {
             viewModel.image
-                .frame(height: 200.0)
-            Spacer()
+                .scaledToFit()
             Text(viewModel.text)
+                .frame(maxWidth: 300, alignment: .center)
+                .font(.system(size: 20))
             Text(viewModel.text2)
+                .frame(maxWidth: 300, alignment: .center)
+                .font(.system(size: 20))
             Spacer()
             Button(action: {
                 onSkip()
@@ -148,10 +157,14 @@ struct ThirdView: View {
     var body: some View {
         VStack {
             viewModel.image
-                .frame(height: 200.0)
+                .scaledToFit()
             Spacer()
             Text(viewModel.text)
+                .frame(alignment: .center)
+                .font(.system(size: 20))
             Text(viewModel.text2)
+                .multilineTextAlignment(.center)
+                .font(.system(size: 20))
             Spacer()
             Button(action: {
                 onSkip()

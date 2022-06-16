@@ -117,7 +117,7 @@ struct photoView: View {
                         destination: SenseView(
                             rootIsActive: $rootIsActive,
                             image: viewModel.selectedImage,
-                            location: viewModel.region.center
+                            location: viewModel.selectedLocation
                         )
                     ) { Text("Use Photo")
                     }
@@ -130,7 +130,7 @@ struct photoView: View {
                 if viewModel.sourceType == .camera {
                     CameraView(sourceType: viewModel.sourceType, isPresentingImagePicker: $viewModel.isPresentingImagePicker, selectedImage: $viewModel.selectedImage)
                 } else if viewModel.sourceType == .photoLibrary {
-                    CustomPhotoPickerView(selectedImage: $viewModel.selectedImage, date: $viewModel.date, location: $viewModel.region.center)
+                    CustomPhotoPickerView(selectedImage: $viewModel.selectedImage, date: $viewModel.date, location: $viewModel.selectedLocation)
                 }
             })
     }
@@ -149,6 +149,7 @@ class ViewModel: ObservableObject {
         latitudinalMeters: .init(10000),
         longitudinalMeters: .init(10000))
 
+    @Published var selectedLocation: CLLocationCoordinate2D? = nil
 
     //    private(set) var sourceType: ImagePicker.SourceType = .camera
     private(set) var sourceType: CameraView.SourceType = .camera

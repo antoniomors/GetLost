@@ -18,15 +18,14 @@ struct Home: View {
 
     @State var region = MKCoordinateRegion(
         center: CLLocationCoordinate2D(
-            latitude: 20.0,
-            longitude: 20.0),
+            latitude: 40.8518,
+            longitude: 14.2681),
         latitudinalMeters: .init(10000),
         longitudinalMeters: .init(10000))
 
     var body: some View {
         TabView {
             ZStack{
-
                 let regionWithOffset = Binding<MKCoordinateRegion>(
                     get: {
                         let offsetCenter = CLLocationCoordinate2D(latitude: region.center.latitude + region.span.latitudeDelta * 0.30, longitude: region.center.longitude)
@@ -39,24 +38,11 @@ struct Home: View {
                     }
                 )
 
-                //    MapPin if else
-                if let cardsWithLocation = Optional(settings.cardListSave.filter({ $0.photo != nil })) {
-                    Map(coordinateRegion: regionWithOffset, annotationItems: cardsWithLocation) { card in
-                        MapAnnotation(coordinate: card.photo!.location.clCoordinate) {
-                            PlaceAnnotationView(title: card.title)
-                        }
-                    }
-                }
-                else {
-                    Map(coordinateRegion: regionWithOffset, interactionModes: MapInteractionModes.all)
-                }
-
-                MapView()
+                MapView(annotationItems: settings.$cardListSave)
                     .environmentObject(mapData)
                     .ignoresSafeArea(.all, edges: .all)
 
-                VStack{
-
+                VStack {
                     VStack(spacing: 0){
                         HStack{
 

@@ -70,7 +70,7 @@ struct newDerive: View {
                             .bold()
                             .foregroundColor(.white)
                     });
-                Spacer()
+//                Spacer()
                 TextField("Insert project title...", text: $name)
                     .frame(width: 300)
                     .padding(10)
@@ -79,14 +79,8 @@ struct newDerive: View {
                             .stroke(.gray)
                     )
                 Spacer()
-                    .frame(height: 500)
+                    .frame(height: 400)
             }
         }
     }
 }
-
-//struct emptyDerive_Previews: PreviewProvider {
-//    static var previews: some View {
-//        emptyDerive()
-//    }
-//}

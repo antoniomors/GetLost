@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreLocation
+import AsyncLocationKit
 
 struct SenseView: View {
 
@@ -34,7 +35,7 @@ struct SenseView: View {
         ZStack {
             VStack {
                 Text("Which sense is mostly\n \ninvolved in this record?")
-                    .padding(.bottom, 600)
+//                    .padding(.bottom, 600)
                     .font(.system(size: 24))
             }
             ButtonMenu()
@@ -47,7 +48,9 @@ struct SenseView: View {
                 // TODO: (card list)
 
                 Button(action: {
-                    savePhoto()
+                    Task {
+                        try await savePhoto()
+                    }
                     rootIsActive = false
                 }, label: {
                     Text("Done")
@@ -69,14 +72,28 @@ struct SenseView: View {
         return paths[0]
     }
 
-    private func savePhoto() {
+    private func requestLocation() async throws -> CLLocationCoordinate2D? {
+        let locationManager = AsyncLocationManager()
+        let coordinate = try await locationManager.requestLocation()
+        guard case let .didUpdateLocations(locations: coordinates) = coordinate else { return nil }
+        return coordinates.first?.coordinate
+    }
+
+    private func savePhoto() async throws {
         var allModels = settings.cardListSave
+
+        let newLocation: CLLocationCoordinate2D?
+        if let currentLocation = location {
+            newLocation = currentLocation
+        } else {
+            newLocation = try await requestLocation()
+        }
 
         if allModels.count >= 1,
            let image = image,
-           let location = location,
+           let location = newLocation,
            let data = image.jpegData(compressionQuality: 0.8) {
-            let modelIndex = 0
+            let modelIndex = allModels.count-1
             #warning("Look Here")
 
             // TODO: save photo not to first but to selected card
