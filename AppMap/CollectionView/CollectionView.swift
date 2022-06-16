@@ -29,7 +29,7 @@ struct CollectionView: View {
                 }
             }
         }
-        .navigationTitle("My Experiences")
+        .navigationTitle("Collection")
         .toolbar {
             Button(action: {
                 self.showNewDerive.toggle()

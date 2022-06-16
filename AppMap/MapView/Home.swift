@@ -151,7 +151,7 @@ struct Home: View {
                     emptyDerive()
                 } else {
                     DeriveView()
-                        .navigationTitle("GetLost")
+                        .navigationTitle("Dérive")
                 }
             }
             .tabItem {

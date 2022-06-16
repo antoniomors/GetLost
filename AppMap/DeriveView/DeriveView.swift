@@ -99,17 +99,20 @@ struct photoView: View {
             Button(action: viewModel.takePhoto, label: {
                 Text("Take Photo")
             })
-        }.padding()
+        }
+//        .padding()
     }
 
     var body: some View {
 
         VStack {
             imageView(for: viewModel.selectedImage)
+                .frame(width: 400, height: 400)
             if viewModel.selectedImage == nil {
                 controlBar()
             } else {
-
+Spacer()
+                    .frame(height: 100)
                 Button(action: {
                     
                 }, label: {

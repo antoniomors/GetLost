@@ -35,18 +35,19 @@ struct SenseView: View {
         ZStack {
             VStack {
                 Text("Which sense is mostly\n \ninvolved in this record?")
-//                    .padding(.bottom, 600)
+                    .padding(.bottom, 500)
                     .font(.system(size: 24))
             }
             ButtonMenu()
             VStack {
                 Spacer()
-                Text("Where do you want to store your note?")
-                    .font(.system(size: 24))
-                    .font(.title)
+//                Text("Where do you want to store your note?")
+//                    .multilineTextAlignment(.center)
+//                    .font(.system(size: 24))
+//                    .padding()
+
 #warning("Look Here")
                 // TODO: (card list)
-
                 Button(action: {
                     Task {
                         try await savePhoto()
@@ -60,6 +61,7 @@ struct SenseView: View {
                         .background(Color(red: 0.2784313725490196, green: 0.2784313725490196, blue: 0.2784313725490196))
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(angularGradient, lineWidth: 8))
                         .cornerRadius(10)
+                        .padding(100)
                 })
             }
         }.background(.black)
@@ -94,7 +96,8 @@ struct SenseView: View {
            let location = newLocation,
            let data = image.jpegData(compressionQuality: 0.8) {
             let modelIndex = allModels.count-1
-            #warning("Look Here")
+
+#warning("Look Here")
 
             // TODO: save photo not to first but to selected card
 
