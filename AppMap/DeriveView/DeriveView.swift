@@ -10,36 +10,36 @@ import MapKit
 
 
 struct DeriveView: View {
-
+    
     // animation
-
+    
     @State private var isRotated = false
     var animation: Animation {
         Animation.easeOut
             .repeatForever(autoreverses: true)
     }
-
+    
     @State var image = UIImage()
     //    sheetty
     @State private var showSheet: Bool = false
     @State private var showLibrary: Bool = false
-
+    
     @State private var sourceType: UIImagePickerController.SourceType = .camera
     @State var selection: String? = nil
-
+    
     @State var selectedIndex: Int = 0
-
+    
     @State private var showImagePicker: Bool = false
     @State var rootIsActive: Bool = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
                 ZStack{
-
+                    
                     Image("logoIntro")
                         .offset(x: 0, y: -100)
-
+                    
                     Button(action: {
                         rootIsActive = false
                     }, label: {
@@ -54,7 +54,7 @@ struct DeriveView: View {
                 //                .padding(.bottom, 210)
                 .padding(.leading)
                 .padding(.trailing, 10)
-
+                
                 Text("By tapping on the plus symbol\nyou will be able to add your records")
                     .font(.system(size: 20))
                     .padding([.trailing, .leading])
@@ -73,9 +73,9 @@ struct DeriveView_Previews: PreviewProvider {
 struct photoView: View {
     @StateObject var viewModel = ViewModel()
     @Binding var rootIsActive: Bool
-
+    
     @ViewBuilder
-
+    
     // to see the image in the screen
     func imageView(for image: UIImage?) -> some View {
         if let image = image {
@@ -87,7 +87,7 @@ struct photoView: View {
                 .padding()
         }
     }
-
+    
     // this is for the 2 buttons
     func controlBar() -> some View {
         HStack(spacing: 32) {
@@ -100,18 +100,18 @@ struct photoView: View {
                 Text("Take Photo")
             })
         }
-//        .padding()
+        //        .padding()
     }
-
+    
     var body: some View {
-
+        
         VStack {
             imageView(for: viewModel.selectedImage)
                 .frame(width: 400, height: 400)
             if viewModel.selectedImage == nil {
                 controlBar()
             } else {
-Spacer()
+                Spacer()
                     .frame(height: 100)
                 Button(action: {
                     
@@ -126,7 +126,7 @@ Spacer()
                     }
                 })
             }
-
+            
         }.navigationBarHidden(true)
             .navigationBarHidden(true)
             .fullScreenCover(isPresented: $viewModel.isPresentingImagePicker, content: {
@@ -151,27 +151,27 @@ class ViewModel: ObservableObject {
             longitude: 20.0),
         latitudinalMeters: .init(10000),
         longitudinalMeters: .init(10000))
-
+    
     @Published var selectedLocation: CLLocationCoordinate2D? = nil
-
+    
     //    private(set) var sourceType: ImagePicker.SourceType = .camera
     private(set) var sourceType: CameraView.SourceType = .camera
-
-
+    
+    
     func choosePhoto() {
         sourceType = .photoLibrary
         isPresentingImagePicker = true
     }
-
+    
     func takePhoto() {
         sourceType = .camera
         isPresentingImagePicker = true
     }
-
+    
     func didSelectImage(_ image: UIImage?) {
         selectedImage = image
         isPresentingImagePicker = false
-
-
+        
+        
     }
 }

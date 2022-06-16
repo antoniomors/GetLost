@@ -52,7 +52,6 @@ struct CustomPhotoPickerView: UIViewControllerRepresentable {
                     print(assetResults.firstObject?.location ?? "BOH")
                     if let coordinate  = assetResults.firstObject?.location?.coordinate {
                         self.parent.location = coordinate
-                        print(self.parent.location)
                     }
                 }
             }

@@ -11,7 +11,7 @@ import SwiftUI
 
 struct GetLostApp: App {
     @ObservedObject var settings = UserSettings()
-
+    
     var body: some Scene {
         WindowGroup {
             Group {

@@ -13,7 +13,7 @@ struct SimpleOnboardingViewModel {
     let text2: String
     let image: Image
     let buttonTitle: String
-
+    
     init(text: String, text2: String, image: Image, buttonTitle: String = "Skip") {
         self.text = text
         self.text2 = text2
@@ -24,14 +24,14 @@ struct SimpleOnboardingViewModel {
 
 struct OnboardingView: View {
     @Binding var isOnboardingShown: Bool
-
+    
     @ViewBuilder
     var currentView: some View {
         SimpleOnboardingView() {
             self.isOnboardingShown.toggle()
         }
     }
-
+    
     var body: some View {
         VStack {
             currentView
@@ -41,7 +41,7 @@ struct OnboardingView: View {
 
 struct SimpleOnboardingView: View {
     var onSkip: () -> Void
-
+    
     var body: some View {
         TabView {
             FirstView(
@@ -61,7 +61,7 @@ struct SimpleOnboardingView: View {
             ) {
                 onSkip()
             }
-
+            
             ThirdView(
                 viewModel: SimpleOnboardingViewModel(
                     text: "\nYou will be part\n\n",
@@ -80,27 +80,27 @@ struct SimpleOnboardingView: View {
 struct FirstView: View {
     let viewModel: SimpleOnboardingViewModel
     let onSkip: () -> Void
-
+    
     private let headerFont = Font.system(size: 24, weight: .medium)
     private let buttonFont = Font.system(size: 20, weight: .bold)
-
+    
     var body: some View {
         VStack {
             Text(viewModel.text)
                 .fontWeight(.bold)
                 .font(.system(size: 24))
                 .multilineTextAlignment(.center)
-
+            
             Spacer()
             viewModel.image
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)
-Spacer()
+            Spacer()
             Text(viewModel.text2)
                 .frame(maxWidth: 300, alignment: .center)
                 .font(.system(size: 20))
-Spacer()
+            Spacer()
             Button(action: {
                 onSkip()
             }) {
@@ -112,16 +112,16 @@ Spacer()
             Spacer()
         }
     }
-
+    
 }
 
 struct SecondView: View {
     let viewModel: SimpleOnboardingViewModel
     let onSkip: () -> Void
-
+    
     private let headerFont = Font.system(size: 24, weight: .medium)
     private let buttonFont = Font.system(size: 20, weight: .bold)
-
+    
     var body: some View {
         VStack {
             viewModel.image
@@ -144,16 +144,16 @@ struct SecondView: View {
             Spacer()
         }
     }
-
+    
 }
 
 struct ThirdView: View {
     let viewModel: SimpleOnboardingViewModel
     let onSkip: () -> Void
-
+    
     private let headerFont = Font.system(size: 24, weight: .medium)
     private let buttonFont = Font.system(size: 20, weight: .bold)
-
+    
     var body: some View {
         VStack {
             viewModel.image
@@ -177,7 +177,7 @@ struct ThirdView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.white, lineWidth: 2)
-                )
+                    )
             }
             .background(Color.white)
             .cornerRadius(25)
@@ -185,13 +185,13 @@ struct ThirdView: View {
             Spacer()
         }
     }
-
+    
 }
 
 struct OnboardingButton: ButtonStyle {
-
+    
     var secondary = false
-
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .foregroundColor(Color.primary)

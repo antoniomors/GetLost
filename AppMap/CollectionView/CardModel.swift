@@ -11,7 +11,7 @@ import CoreLocation
 struct Coordinate: Codable {
     let latitude: Double
     let longitude: Double
-
+    
     var clCoordinate: CLLocationCoordinate2D {
         .init(latitude: latitude, longitude: longitude)
     }
@@ -21,7 +21,7 @@ extension CLLocationCoordinate2D {
     var coordinate: Coordinate {
         .init(latitude: latitude, longitude: longitude)
     }
-
+    
     init(coordinate: Coordinate) {
         self.init(latitude: coordinate.latitude, longitude: coordinate.longitude)
     }
@@ -38,7 +38,7 @@ struct CardModel: Identifiable {
     let id: UUID
     var title: String
     var photo: PhotoModel?
-
+    
     init(id: UUID = UUID(), title: String, photo: PhotoModel? = nil) {
         self.id = id
         self.title = title
@@ -50,7 +50,7 @@ extension CardModel {
     struct Attendee: Identifiable {
         let id: UUID
         var name: String
-
+        
         init(id: UUID = UUID(), name: String) {
             self.id = id
             self.name = name
@@ -69,7 +69,7 @@ extension Array: RawRepresentable where Element: Codable {
         }
         self = result
     }
-
+    
     public var rawValue: String {
         guard let data = try? JSONEncoder().encode(self),
               let result = String(data: data, encoding: .utf8)

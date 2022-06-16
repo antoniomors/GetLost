@@ -11,42 +11,36 @@ struct DetailView: View {
     let scrum: CardModel
     var sense: [Sense] = [Sense(name: "Via Stica, Naples", creation: "01/12/2022", emote: Image(systemName: "nose.fill"), color: .green),
                           Sense(name: "Via Mazzi, Naples", creation: "08/04/2021", emote: Image(systemName: "hand.wave"), color: .yellow)]
-
+    
     var body: some View {
         GeometryReader { proxy in
-        ScrollView {
-            VStack {
-                if let url = scrum.photo?.imageURL {
-                    AsyncImage(url: url) { phase in
-                                    switch phase {
-                                    case .empty:
-                                        ProgressView()
-                                    case .success(let image):
-                                        image.resizable()
-                                            .aspectRatio(contentMode: .fit)
-//                                            .frame(width: proxy.size.width)
-                                            .frame(height: 400)
-                                    case .failure:
-                                        Image(systemName: "photo")
-                                    @unknown default:
-                                        // Since the AsyncImagePhase enum isn't frozen,
-                                        // we need to add this currently unused fallback
-                                        // to handle any new cases that might be added
-                                        // in the future:
-                                        EmptyView()
-                                    }
-                                }
-
+            ScrollView {
+                VStack {
+                    if let url = scrum.photo?.imageURL {
+                        AsyncImage(url: url) { phase in
+                            switch phase {
+                            case .empty:
+                                ProgressView()
+                            case .success(let image):
+                                image.resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(height: 400)
+                            case .failure:
+                                Image(systemName: "photo")
+                            @unknown default:
+                                EmptyView()
+                            }
+                        }
+                    }
+                    if let location = scrum.photo?.location {
+                        Text("lon: \(location.longitude), lat: \(location.latitude)")
+                    }
+                    ForEach(sense) { i in
+                        Card(text: i)
+                    }
                 }
-                if let location = scrum.photo?.location {
-                    Text("lon: \(location.longitude), lat: \(location.latitude)")
-                }
-                ForEach(sense) { i in
-                    Card(text: i)
-                }
+                Spacer()
             }
-            Spacer()
-        }
         }
         .navigationTitle(scrum.title)
     }
@@ -67,9 +61,9 @@ struct Sense: Identifiable {
 }
 
 struct Card: View {
-
+    
     @State var text: Sense
-
+    
     var body: some View {
         HStack {
             text.emote
@@ -82,11 +76,11 @@ struct Card: View {
                     .frame(width: 320, height: 100)
                     .foregroundColor(Color(red: 0.2784313725490196, green: 0.2784313725490196, blue: 0.2784313725490196))
                 VStack(alignment: .leading, spacing: 5) {
-
+                    
                     Text(text.name)
                         .fontWeight(.heavy)
                         .padding(.bottom, 1)
-
+                    
                     Text(text.creation)
                 }.padding()
             }

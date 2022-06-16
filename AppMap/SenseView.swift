@@ -10,11 +10,11 @@ import CoreLocation
 import AsyncLocationKit
 
 struct SenseView: View {
-
+    
     @Binding var rootIsActive: Bool
     let image: UIImage?
     let location: CLLocationCoordinate2D?
-
+    
     // 5 colors of senses
     let gradientWithFourColors = Gradient(colors: [
         Color("ColorButton1"),
@@ -24,13 +24,13 @@ struct SenseView: View {
         Color("ColorButton5")
     ]
     )
-
+    
     @ObservedObject private var settings = UserSettings()
-
+    
     // angular gradient var
     let angularGradient = AngularGradient(gradient: Gradient(colors: [Color("ButtonColor1"), Color("ButtonColor2"), Color("ButtonColor3"), Color("ButtonColor4"), Color("ButtonColor5")] ), center: .center, startAngle: .degrees(0), endAngle: .degrees(360))
-
-
+    
+    
     var body: some View {
         ZStack {
             VStack {
@@ -41,12 +41,11 @@ struct SenseView: View {
             ButtonMenu()
             VStack {
                 Spacer()
-//                Text("Where do you want to store your note?")
-//                    .multilineTextAlignment(.center)
-//                    .font(.system(size: 24))
-//                    .padding()
-
-#warning("Look Here")
+                //                Text("Where do you want to store your note?")
+                //                    .multilineTextAlignment(.center)
+                //                    .font(.system(size: 24))
+                //                    .padding()
+                
                 // TODO: (card list)
                 Button(action: {
                     Task {
@@ -66,46 +65,44 @@ struct SenseView: View {
             }
         }.background(.black)
             .navigationBarHidden(true)
-                .navigationBarHidden(true)
+            .navigationBarHidden(true)
     }
-
+    
     private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
-
+    
     private func requestLocation() async throws -> CLLocationCoordinate2D? {
         let locationManager = AsyncLocationManager()
         let coordinate = try await locationManager.requestLocation()
         guard case let .didUpdateLocations(locations: coordinates) = coordinate else { return nil }
         return coordinates.first?.coordinate
     }
-
+    
     private func savePhoto() async throws {
         var allModels = settings.cardListSave
-
+        
         let newLocation: CLLocationCoordinate2D?
         if let currentLocation = location {
             newLocation = currentLocation
         } else {
             newLocation = try await requestLocation()
         }
-
+        
         if allModels.count >= 1,
            let image = image,
            let location = newLocation,
            let data = image.jpegData(compressionQuality: 0.8) {
             let modelIndex = allModels.count-1
-
-#warning("Look Here")
-
+            
             // TODO: save photo not to first but to selected card
-
+            
             var selectedModel = allModels[modelIndex]
-
+            
             let fileURL = getDocumentsDirectory().appendingPathComponent("\(selectedModel.id.uuidString).png")
             try? data.write(to: fileURL)
-
+            
             selectedModel.photo = PhotoModel(imageURL: fileURL, location: location.coordinate)
             allModels[modelIndex] = selectedModel
             settings.cardListSave = allModels
@@ -117,22 +114,22 @@ extension Color {
     static let hearing = Color("ColorButton5")
     static let sight = Color("ColorButton1")
     static let taste = Color("ColorButto4")
-
+    
 }
 
 struct ButtonMenu : View {
-
+    
     //selected button
     @State private var isSelected1 = false
     @State private var isSelected2 = false
     @State private var isSelected3 = false
     @State private var isSelected4 = false
     @State private var isSelected5 = false
-
+    
     var body: some View {
-
+        
         VStack {
-
+            
             // HEARING BUTTON
             Button(action: {
                 self.isSelected1.toggle()
@@ -142,7 +139,7 @@ struct ButtonMenu : View {
                     isSelected4 = false
                     isSelected5 = false
                 }
-
+                
             }, label: { HStack {
             icon: do {Image(systemName: "ear.fill")
                     .foregroundColor(isSelected1 ? .orange : .gray)
@@ -154,9 +151,9 @@ struct ButtonMenu : View {
                 .foregroundColor(.white)}
             }
             })
-
+            
             Divider().frame(width: 200).background(.black)
-
+            
             // SIGHT BUTTON
             Button(action: {
                 self.isSelected2.toggle()
@@ -166,11 +163,11 @@ struct ButtonMenu : View {
                     isSelected4 = false
                     isSelected5 = false
                 }
-
+                
             }, label: { HStack {
-
+                
             icon: do {Image(systemName: "eye.fill").padding(.trailing, 20).font(.system(size: 24)).foregroundColor(isSelected2 ? .purple : .gray)}
-
+                
             title: do {Text("Sight")
                     .fontWeight(isSelected2 ? .heavy : .regular)
                     .padding(.trailing, 46)
@@ -178,7 +175,7 @@ struct ButtonMenu : View {
             }
             })
             Divider().frame(width: 200).background(.black)
-
+            
             // SMELL BUTTON
             Button(action: {
                 self.isSelected3.toggle()
@@ -188,7 +185,7 @@ struct ButtonMenu : View {
                     isSelected4 = false
                     isSelected5 = false
                 }
-
+                
             }, label: {
                 HStack{
                 icon: do {Image(systemName: "nose.fill")
@@ -201,7 +198,7 @@ struct ButtonMenu : View {
                 }
             })
             Divider().frame(width: 200).background(.black)
-
+            
             // TASTE BUTTON
             Button(action: {
                 self.isSelected4.toggle()
@@ -218,7 +215,7 @@ struct ButtonMenu : View {
                         .padding(.trailing, 20)
                         .font(.system(size: 24))
                 }
-
+                    
                 title: do {Text("Taste")
                         .fontWeight(isSelected4 ? .heavy : .regular)
                         .padding(.trailing, 40)
@@ -227,7 +224,7 @@ struct ButtonMenu : View {
                 }
             })
             Divider().frame(width: 200).background(.black)
-
+            
             // TOUCH BUTTON
             Button(action: {
                 self.isSelected5.toggle()
@@ -237,7 +234,7 @@ struct ButtonMenu : View {
                     isSelected4 = false
                     isSelected1 = false
                 }
-
+                
             }, label: {
                 HStack {
                 icon: do {Image(systemName: "hand.wave.fill")
@@ -250,10 +247,10 @@ struct ButtonMenu : View {
                     .foregroundColor(.white)}
                 }
             })
-
+            
         }.frame(width: 180, height:240)
             .background(Color(hue: 0.0, saturation: 0.026, brightness: 0.277))
             .cornerRadius(12)
-
+        
     }
 }

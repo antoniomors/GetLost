@@ -9,15 +9,15 @@ import SwiftUI
 
 struct emptyDerive: View {
     @State var showNewDerive: Bool = false
-
+    
     var body: some View {
         NavigationView {
             VStack {
-
+                
                 Image("emptyDerive")
                     .offset(x: 0, y: -100)
                     .padding(-70)
-
+                
                 Text("No Dérive created yet\n\n")
                     .font(.system(size: 24))
                     .padding(30)
@@ -31,7 +31,7 @@ struct emptyDerive: View {
                     .sheet(isPresented: $showNewDerive) {
                         newDerive()
                     }
-
+                
                 Text("\n\nCreate a new Dérive experience")
                     .font(.system(size: 20))
             }
@@ -42,10 +42,10 @@ struct emptyDerive: View {
 struct newDerive: View {
     @State var showNewDerive = false
     @State private var name: String = ""
-
+    
     @ObservedObject private var settings = UserSettings()
     @Environment(\.dismiss) var dismiss
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -58,9 +58,9 @@ struct newDerive: View {
                             .bold()
                             .foregroundColor(.white)
                     }, trailing: Button (action: {
-
+                        
                         self.dismiss()
-
+                        
                         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                             let newModel = CardModel(title: name)
                             settings.cardListSave.append(newModel)
@@ -70,7 +70,7 @@ struct newDerive: View {
                             .bold()
                             .foregroundColor(.white)
                     });
-//                Spacer()
+                //                Spacer()
                 TextField("Insert project title...", text: $name)
                     .frame(width: 300)
                     .padding(10)
