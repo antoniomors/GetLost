@@ -1,14 +1,4 @@
 # GetLost
 
-****** to fix ******
-- when audio button is pressed it opens a page and it's bugged
 
-- create a page where image picked and audio picked go
-
-- create database
-
-- link database to photo, position and audio
-
-- create a button to give the "sense" to the selected file
-
-***********************************************************
+<img width="1180" alt="Screenshot 2022-07-29 at 10 14 58" src="https://user-images.githubusercontent.com/92628355/181715563-1765ac52-694d-4249-ba82-eb421098e9de.png">
